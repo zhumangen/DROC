@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PrintParamDialog</class>
+ <widget class="QDialog" name="PrintParamDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>661</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Printer Parameters</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Film Session</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <widget class="QComboBox" name="mediumTypeCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Medium Type</string>
+        </property>
+        <property name="buddy">
+         <cstring>mediumTypeCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Session Label</string>
+        </property>
+        <property name="buddy">
+         <cstring>sessionLabelCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Priority</string>
+        </property>
+        <property name="buddy">
+         <cstring>priorityCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="priorityCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LOW</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MED</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>HIGH</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Destination</string>
+        </property>
+        <property name="buddy">
+         <cstring>destinationCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="destinationCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="sessionLabelCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Owner ID</string>
+        </property>
+        <property name="buddy">
+         <cstring>ownerIdCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QComboBox" name="ownerIdCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Film Box</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="1">
+       <widget class="QComboBox" name="filmLayoutCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Film Orientation</string>
+        </property>
+        <property name="buddy">
+         <cstring>filmOrientCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Film Layout</string>
+        </property>
+        <property name="buddy">
+         <cstring>filmLayoutCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QComboBox" name="filmOrientCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string notr="true">PORTRAIT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">LANDSCAPE</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Film Size ID</string>
+        </property>
+        <property name="buddy">
+         <cstring>filmSizeCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="filmSizeCombo"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>Resolution ID</string>
+        </property>
+        <property name="buddy">
+         <cstring>resolutionIdCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QComboBox" name="resolutionIdCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Magnification</string>
+        </property>
+        <property name="buddy">
+         <cstring>magnificationTypeCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="magnificationTypeCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>Smoothing Type</string>
+        </property>
+        <property name="buddy">
+         <cstring>smoothingTypeCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QComboBox" name="smoothingTypeCombo">
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Density</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="3" column="1">
+       <widget class="QComboBox" name="emptyImageCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="borderDensityCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Max Density</string>
+        </property>
+        <property name="buddy">
+         <cstring>maxDensityCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="maxDensityCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Min Density</string>
+        </property>
+        <property name="buddy">
+         <cstring>minDesityCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QComboBox" name="minDesityCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Empty Image</string>
+        </property>
+        <property name="buddy">
+         <cstring>emptyImageCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Border Density</string>
+        </property>
+        <property name="buddy">
+         <cstring>borderDensityCombo</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Additional Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="implicitOnlyCheck">
+        <property name="text">
+         <string>Implicit Only</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="decimateCropCheck">
+        <property name="text">
+         <string>Decimate Crop</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="disableNewVRsCheck">
+        <property name="text">
+         <string>Disable New VRs</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="presentationLutCheck">
+        <property name="text">
+         <string>Presentation LUT</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="imageSizeCheck">
+        <property name="text">
+         <string>Image Size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="trimCheck">
+        <property name="text">
+         <string>Trim</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="2">
+       <widget class="QCheckBox" name="supports12BitsCheck">
+        <property name="text">
+         <string>Supports 12 bits</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>sessionLabelCombo</tabstop>
+  <tabstop>ownerIdCombo</tabstop>
+  <tabstop>mediumTypeCombo</tabstop>
+  <tabstop>priorityCombo</tabstop>
+  <tabstop>destinationCombo</tabstop>
+  <tabstop>filmLayoutCombo</tabstop>
+  <tabstop>filmOrientCombo</tabstop>
+  <tabstop>filmSizeCombo</tabstop>
+  <tabstop>resolutionIdCombo</tabstop>
+  <tabstop>magnificationTypeCombo</tabstop>
+  <tabstop>smoothingTypeCombo</tabstop>
+  <tabstop>borderDensityCombo</tabstop>
+  <tabstop>maxDensityCombo</tabstop>
+  <tabstop>emptyImageCombo</tabstop>
+  <tabstop>minDesityCombo</tabstop>
+  <tabstop>disableNewVRsCheck</tabstop>
+  <tabstop>implicitOnlyCheck</tabstop>
+  <tabstop>supports12BitsCheck</tabstop>
+  <tabstop>decimateCropCheck</tabstop>
+  <tabstop>presentationLutCheck</tabstop>
+  <tabstop>imageSizeCheck</tabstop>
+  <tabstop>trimCheck</tabstop>
+  <tabstop>okButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>PrintParamDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>519</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>644</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

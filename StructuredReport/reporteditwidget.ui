@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportEditWidget</class>
+ <widget class="QWidget" name="ReportEditWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>971</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="openButton">
+       <property name="text">
+        <string>Open</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
+       <property name="text">
+        <string>Save</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="settingsButton">
+       <property name="text">
+        <string>Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="insertImageButton">
+       <property name="text">
+        <string>Insert Image</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="removeImageButton">
+       <property name="text">
+        <string>Remove Image</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="completeButton">
+       <property name="text">
+        <string>Complete</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="verigyButton">
+       <property name="text">
+        <string>Verify</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="printButton">
+       <property name="text">
+        <string>Print</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="printPreviewButton">
+       <property name="text">
+        <string>Print Preview</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="paperSizeCombo">
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToContents</enum>
+       </property>
+       <item>
+        <property name="text">
+         <string>A4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>A5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>A3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>B4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>B5</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomHLayout" stretch="0,0">
+     <item>
+      <widget class="QScrollArea" name="thumbnailScrollArea">
+       <property name="minimumSize">
+        <size>
+         <width>148</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustIgnored</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>129</width>
+          <height>641</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QMdiArea" name="mdiArea">
+       <property name="viewMode">
+        <enum>QMdiArea::TabbedView</enum>
+       </property>
+       <property name="documentMode">
+        <bool>true</bool>
+       </property>
+       <property name="tabsClosable">
+        <bool>true</bool>
+       </property>
+       <property name="tabsMovable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
