@@ -640,14 +640,9 @@ void DicomImageView::setNone()
 void DicomImageView::refreshPixmap()
 {
     QPixmap pixmap;
-<<<<<<< HEAD
     if (image) {
         image->setImageType(rawType);
         image->getPixmap(pixmap);
-=======
-    if (image && image->getPixmap(pixmap)) {
-        image->setImageType(rawType);
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         pixmapItem->setPixmap(pixmap);
         pixmapItem->setTransformOriginPoint(pixmapItem->boundingRect().center());
         double center, width;

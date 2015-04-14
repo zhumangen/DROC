@@ -211,7 +211,6 @@ void ImageAcquisitWidget::initDcmFileFormat()
     dset->putAndInsertString(DCM_InstitutionName, instInfo.name.toLocal8Bit().data());
     dset->putAndInsertString(DCM_InstitutionAddress, instInfo.addr.toLocal8Bit().data());
     dset->putAndInsertString(DCM_InstitutionalDepartmentName, instInfo.tel.toLatin1().data());
-<<<<<<< HEAD
 }
 
 void ImageAcquisitWidget::updateDetectorSpecificParams()
@@ -226,17 +225,7 @@ void ImageAcquisitWidget::updateDetectorSpecificParams()
     dset->putAndInsertUint16(DCM_HighBit, detInfo.highBit);
     dset->putAndInsertUint16(DCM_SamplesPerPixel, 1);
     dset->putAndInsertString(DCM_NumberOfFrames, "1");
-=======
-    QString spacings = QString("%1\\%2").arg(detInfo.xSpacing, 0, 'f', 6).arg(detInfo.ySpacing, 0, 'f', 6);
-    dset->putAndInsertString(DCM_ImagerPixelSpacing, spacings.toLatin1().data());
-    dset->putAndInsertString(DCM_PixelSpacing, spacings.toLatin1().data());
-    dset->putAndInsertUint16(DCM_SamplesPerPixel, 1);
-    dset->putAndInsertString(DCM_PhotometricInterpretation, "MONOCHROME1");
-    dset->putAndInsertString(DCM_NumberOfFrames, "1");
-    dset->putAndInsertUint16(DCM_BitsAllocated, detInfo.bitsAllocated);
-    dset->putAndInsertUint16(DCM_BitsStored, detInfo.bitsStored);
-    dset->putAndInsertUint16(DCM_HighBit, detInfo.highBit);
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
+
     dset->putAndInsertUint16(DCM_PixelRepresentation, 0);
     dset->putAndInsertString(DCM_RescaleIntercept, "0");
     dset->putAndInsertString(DCM_RescaleSlope, "1");
