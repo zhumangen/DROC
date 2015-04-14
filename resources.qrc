@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="splash.png">Resources/images/splash.png</file>
+        <file alias="window.ico">Resources/images/window.ico</file>
+        <file alias="body.png">Resources/images/body.png</file>
+        <file alias="exp_disable.png">Resources/images/exposure_disable.png</file>
+        <file alias="exp_green.png">Resources/images/exposure_green.png</file>
+        <file alias="exp_normal.png">Resources/images/exposure_normal.png</file>
+        <file alias="exp_yellow.png">Resources/images/exposure_yellow.png</file>
+    </qresource>
+    <qresource prefix="/imagetool">
+        <file>Resources/imagetool/cursor.png</file>
+        <file>Resources/imagetool/angle.png</file>
+        <file>Resources/imagetool/arrow.png</file>
+        <file>Resources/imagetool/cobbangle.png</file>
+        <file>Resources/imagetool/cut.png</file>
+        <file>Resources/imagetool/delete.png</file>
+        <file>Resources/imagetool/ecllipse.png</file>
+        <file>Resources/imagetool/edit_cut.png</file>
+        <file>Resources/imagetool/hflip.png</file>
+        <file>Resources/imagetool/l_flag.png</file>
+        <file>Resources/imagetool/length.png</file>
+        <file>Resources/imagetool/negative.png</file>
+        <file>Resources/imagetool/pan.png</file>
+        <file>Resources/imagetool/r_flag.png</file>
+        <file>Resources/imagetool/rectangle.png</file>
+        <file>Resources/imagetool/redo.png</file>
+        <file>Resources/imagetool/reset.png</file>
+        <file>Resources/imagetool/rotateccw.png</file>
+        <file>Resources/imagetool/rotatecw.png</file>
+        <file>Resources/imagetool/Text.png</file>
+        <file>Resources/imagetool/textfont.png</file>
+        <file>Resources/imagetool/undo.png</file>
+        <file>Resources/imagetool/vflip.png</file>
+        <file>Resources/imagetool/zoom.png</file>
+        <file>Resources/imagetool/roi.png</file>
+    </qresource>
+</RCC>
