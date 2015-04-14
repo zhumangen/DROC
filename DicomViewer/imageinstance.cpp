@@ -31,8 +31,6 @@ ImageInstance::~ImageInstance()
 bool ImageInstance::isNormal() const
 {
     if (rawType) {
-        if (!rawImage)
-            rawImage = new DicomImage(rawFile.toLocal8Bit().data());
         return rawImage && (rawImage->getStatus()==EIS_Normal);
     } else {
         return dcmImage && (dcmImage->getStatus() == EIS_Normal);
@@ -275,6 +273,10 @@ bool ImageInstance::dcm2bmpHelper(DicomImage &dcmImage, QPixmap &pixmap)
 bool ImageInstance::getPixmap(QPixmap &pixmap)
 {
     bool retval = true;
+
+    if (rawType && (!rawImage))
+        rawImage = new DicomImage(rawFile.toLocal8Bit().data());
+
     if (isNormal()) {
         if (rawType) {
             if (rawWidth < 1) rawWidth = 1;
