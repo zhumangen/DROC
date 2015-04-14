@@ -96,7 +96,10 @@ private:
     void createComponents();
     void createConnections();
     void initDcmFileFormat();
+<<<<<<< HEAD
     void updateDetectorSpecificParams();
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     void insertStudyToDataset(const StudyRecord &study);
     void insertImageToDataset();
     static bool savePrImageToDb(DcmFileFormat &dcmff, QString &fileName = QString());

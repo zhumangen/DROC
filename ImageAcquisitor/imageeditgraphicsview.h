@@ -44,7 +44,10 @@ public:
     explicit ImageEditGraphicsView(QWidget *parent = 0);
     ~ImageEditGraphicsView();
     bool setFileFormat(DcmFileFormat *dff, bool process = true);
+<<<<<<< HEAD
     void setImageTransform(int angle, int hori, int vert) { rotateAngle = angle; hflip = hori; vflip = vert; }
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     void setPixelSpacing(double x, double y) { xSpacing = x; ySpacing = y; }
     void getWindow(double &center, double &width) { center = winCenter; width = winWidth; }
 
@@ -85,7 +88,10 @@ protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
+<<<<<<< HEAD
     void mouseDoubleClickEvent(QMouseEvent *event);
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     void wheelEvent(QWheelEvent *event);
     void leaveEvent(QEvent *event);
     void keyPressEvent(QKeyEvent *event);

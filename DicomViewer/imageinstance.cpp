@@ -7,8 +7,11 @@
 #include "dcmtk/dcmdata/dcdeftag.h"
 #include "dcmtk/dcmdata/dcuid.h"
 
+<<<<<<< HEAD
 #include <QFile>
 
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 ImageInstance::ImageInstance(const QString &file):
     rawType(false),
     rawImage(0),
@@ -39,10 +42,14 @@ bool ImageInstance::isNormal() const
 
 bool ImageInstance::hasRawImage()
 {
+<<<<<<< HEAD
     return QFile(rawFile).exists();
     /*
     if (!rawFile.isEmpty()) {
         if ()
+=======
+    if (!rawFile.isEmpty()) {
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         if (rawImage) return true;
 
         rawImage = new DicomImage(rawFile.toLocal8Bit().data());
@@ -55,7 +62,10 @@ bool ImageInstance::hasRawImage()
     }
 
     return false;
+<<<<<<< HEAD
     */
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 }
 
 void ImageInstance::initImage(const QString &file)
@@ -273,10 +283,13 @@ bool ImageInstance::dcm2bmpHelper(DicomImage &dcmImage, QPixmap &pixmap)
 bool ImageInstance::getPixmap(QPixmap &pixmap)
 {
     bool retval = true;
+<<<<<<< HEAD
 
     if (rawType && (!rawImage))
         rawImage = new DicomImage(rawFile.toLocal8Bit().data());
 
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     if (isNormal()) {
         if (rawType) {
             if (rawWidth < 1) rawWidth = 1;

@@ -210,6 +210,7 @@
     </message>
 </context>
 <context>
+<<<<<<< HEAD
     <name>CareRayAcquisitThread</name>
     <message>
         <location filename="ImageAcquisitor/carerayacquisitthread.cpp" line="28"/>
@@ -303,6 +304,8 @@
     </message>
 </context>
 <context>
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     <name>DiagnosticTemplateModel</name>
     <message>
         <location filename="StructuredReport/diagnostictemplatemodel.cpp" line="181"/>
@@ -349,12 +352,20 @@
 <context>
     <name>DicomImageView</name>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/dicomimageview.cpp" line="314"/>
+=======
+        <location filename="DicomViewer/dicomimageview.cpp" line="294"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Zoom: %1%</source>
         <translation></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/dicomimageview.cpp" line="640"/>
+=======
+        <location filename="DicomViewer/dicomimageview.cpp" line="611"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>WL: %1  WW: %2</source>
         <translation></translation>
     </message>
@@ -1382,7 +1393,10 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="823"/>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="154"/>
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Open</source>
         <translation>打开</translation>
     </message>
@@ -1423,6 +1437,7 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1260"/>
+<<<<<<< HEAD
         <source>Start Capture</source>
         <translation>获取图像</translation>
     </message>
@@ -1436,40 +1451,72 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1273"/>
+=======
+        <source>Acquisit</source>
+        <translation>获取图像</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1270"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>End Study</source>
         <translation>结束检查</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1295"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1292"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Body:</source>
         <translation>部位：</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1323"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.ui" line="1320"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Position:</source>
         <translation>体位：</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="88"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="79"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>load VADAV.dll failed.</source>
         <translation>加载VADAV.dll失败。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="159"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="114"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>%1: Open failed</source>
         <translation>%1：打开失败</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="166"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="121"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>%1: Opened</source>
         <translation>%1：已打开</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="611"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="557"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Initializing detector...</source>
         <translation>正在初始化探测器...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Set detector to normal power.</source>
         <translation type="vanished">设置探测器至工作模式。</translation>
     </message>
@@ -1539,25 +1586,126 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="677"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="568"/>
+        <source>Set detector to normal power.</source>
+        <translation>设置探测器至工作模式。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="571"/>
+        <source>Set detector to normal power failed: %1.</source>
+        <translation>设置探测至工作模式失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="577"/>
+        <source>Starting acquisition...</source>
+        <translation>开始采集...</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="580"/>
+        <source>Starting acquisition failed: %1.</source>
+        <translation>开始采集失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="588"/>
+        <source>Querying exposure progress...</source>
+        <translation>查询曝光进度...</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="591"/>
+        <source>Query exposure progress failed: %1.</source>
+        <translation>查询曝光进度失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="610"/>
+        <source>Detector is ready for X-Ray exposure.</source>
+        <translation>探测器准备就绪，请按下手闸进行曝光。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="618"/>
+        <source>Permit exposure failed: %1.</source>
+        <translation>允许曝光失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="639"/>
+        <source>Set detector saving power.</source>
+        <translation>设置探测器至休眠模式。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="642"/>
+        <source>Set detector saving power failed: %1.</source>
+        <translation>设置探测器至休眠模式失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="651"/>
+        <source>Getting frame attribute...</source>
+        <translation>获取帧属性...</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="654"/>
+        <source>Get frame attribute failed: %1.</source>
+        <translation>获取帧属性失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="668"/>
+        <source>Get image failed: %1.</source>
+        <translation>获取图像失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="672"/>
+        <source>Retry getting image...</source>
+        <translation>重试获取图像...</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="688"/>
+        <source>Correcting bad pixels...</source>
+        <translation>坏像素校正...</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="691"/>
+        <source>Bad pixel correcting failed: %1.</source>
+        <translation>坏像素校正失败：%1。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="699"/>
+        <source>Receiving image completed.</source>
+        <translation>接收图像完成。</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="715"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Disconnected</source>
         <translation>连接断开</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="690"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="728"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Detector Error</source>
         <translation>探测器错误</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="693"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="731"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Connected</source>
         <translation>已连接</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="107"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="768"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Disconnect detector failed: %1.</source>
         <translation>断开连接失败：%1。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="155"/>
         <source>%1: Closed</source>
         <translation>%1：已关闭</translation>
@@ -1575,32 +1723,56 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="733"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="795"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Send Image</source>
         <translation>发送图像</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="734"/>
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="735"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="796"/>
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="797"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Store SCP &quot;%1&quot; doesnot exist, send images failed.</source>
         <translation>存储SCP“%1”不存在，发送图像失败。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="914"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="954"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Cannot connect to detector!</source>
         <translation>无法连接到探测器。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="923"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="963"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Connected to detector.</source>
         <translation>已连接到探测器。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="929"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="969"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Start frame failed.</source>
         <translation>开始帧采集失败。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="946"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="986"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Ready : X-ray Exposure</source>
         <translation>就绪：请曝光。</translation>
     </message>
@@ -2196,6 +2368,7 @@ Display format reset.</source>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="106"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="129"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="152"/>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="181"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="204"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="227"/>
@@ -2212,6 +2385,24 @@ Display format reset.</source>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="480"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="503"/>
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="526"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="178"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="201"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="224"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="247"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="270"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="293"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="316"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="339"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="362"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="385"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="408"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="431"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="454"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="477"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="500"/>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="523"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>...</source>
         <translation></translation>
     </message>
@@ -2241,86 +2432,151 @@ Display format reset.</source>
         <translation>图像裁剪</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="178"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="175"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Pan</source>
         <translation>图像平移</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="201"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="198"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Adjust Window width and center</source>
         <translation>调窗调宽</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="224"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="221"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Add R flag</source>
         <translation>R标识</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="247"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="244"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Add L flag</source>
         <translation>L标识</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="270"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="267"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Flag font</source>
         <translation>标识字体</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="293"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="290"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Line</source>
         <translation>直线</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="316"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="313"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Arrow</source>
         <translation>箭头</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="339"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="336"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Text</source>
         <translation>文本</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="362"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="359"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Rectangle</source>
         <translation>矩形</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="385"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="382"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Ecllipse</source>
         <translation>椭圆</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="408"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="405"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Cobbangle</source>
         <translation>法角</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="431"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="428"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Angle</source>
         <translation>角度</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="454"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="451"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Ruler</source>
         <translation>长度</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="477"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="474"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Negative image</source>
         <translation>负相</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="500"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="497"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="523"/>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="520"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Reset</source>
         <translation>重置</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditdialog.ui" line="552"/>
         <source>Accept Image</source>
         <translation>接受图像</translation>
@@ -2337,11 +2593,22 @@ Display format reset.</source>
     <message>
         <source>Cancel</source>
         <translation type="vanished">取消</translation>
+=======
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="549"/>
+        <source>OK</source>
+        <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="ImageAcquisitor/imageeditdialog.ui" line="559"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     </message>
 </context>
 <context>
     <name>ImageEditGraphicsView</name>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="122"/>
         <source>Clip Image</source>
         <translation>图像裁剪</translation>
@@ -2355,11 +2622,20 @@ Display format reset.</source>
         <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="223"/>
         <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="555"/>
         <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="629"/>
+=======
+        <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="170"/>
+        <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="502"/>
+        <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="575"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>WL:%1 WW:%2</source>
         <translation></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="337"/>
+=======
+        <location filename="ImageAcquisitor/imageeditgraphicsview.cpp" line="284"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Zoom: %1%</source>
         <translation></translation>
     </message>
@@ -2523,12 +2799,23 @@ Display format reset.</source>
         <translation>胶片尺寸</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>LANDSCAPE</source>
         <translation type="vanished">横向</translation>
     </message>
     <message>
         <source>PORTRAIT</source>
         <translation type="vanished">竖向</translation>
+=======
+        <location filename="DicomViewer/imageviewwidget.ui" line="136"/>
+        <source>LANDSCAPE</source>
+        <translation>横向</translation>
+    </message>
+    <message>
+        <location filename="DicomViewer/imageviewwidget.ui" line="141"/>
+        <source>PORTRAIT</source>
+        <translation>竖向</translation>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     </message>
     <message>
         <location filename="DicomViewer/imageviewwidget.ui" line="152"/>
@@ -2667,6 +2954,7 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="DicomViewer/imageviewwidget.ui" line="723"/>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.cpp" line="492"/>
         <location filename="DicomViewer/imageviewwidget.cpp" line="570"/>
         <source>Raw Image</source>
@@ -2676,15 +2964,24 @@ Display format reset.</source>
         <location filename="DicomViewer/imageviewwidget.ui" line="742"/>
         <location filename="DicomViewer/imageviewwidget.cpp" line="506"/>
         <location filename="DicomViewer/imageviewwidget.cpp" line="508"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.cpp" line="478"/>
+        <location filename="DicomViewer/imageviewwidget.cpp" line="480"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Film Print</source>
         <translation>胶片打印</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.ui" line="755"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.ui" line="736"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Windows Print</source>
         <translation>普通打印</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.cpp" line="492"/>
         <location filename="DicomViewer/imageviewwidget.cpp" line="570"/>
         <source>Pr. Image</source>
@@ -2692,21 +2989,41 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="DicomViewer/imageviewwidget.cpp" line="506"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.ui" line="746"/>
+        <source>Eidt Report</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="DicomViewer/imageviewwidget.cpp" line="478"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Film Print Succeeded.</source>
         <translation>胶片打印成功。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.cpp" line="508"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.cpp" line="480"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Film Print Failed: %1.</source>
         <translation>胶片打印失败：%1。</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.cpp" line="554"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.cpp" line="526"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Normal Print</source>
         <translation>普通打印</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="DicomViewer/imageviewwidget.cpp" line="554"/>
+=======
+        <location filename="DicomViewer/imageviewwidget.cpp" line="526"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Invalid layout or aspect ratio.</source>
         <translation>无效的胶片布局或胶片纵宽比。</translation>
     </message>
@@ -2976,14 +3293,24 @@ Display format reset.</source>
     <name>MainWindow</name>
     <message>
         <location filename="MainStation/mainwindow.ui" line="26"/>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="259"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="232"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>DR Image Station</source>
         <oldsource>Dicom Image Station</oldsource>
         <translation>DICOM图像工作站</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Begin Study</source>
         <translation type="vanished">开始检查</translation>
+=======
+        <location filename="MainStation/mainwindow.ui" line="65"/>
+        <source>Begin Study</source>
+        <translation>开始检查</translation>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     </message>
     <message>
         <source>Server</source>
@@ -3163,16 +3490,25 @@ Display format reset.</source>
         <translation type="vanished">关于</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="81"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="85"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>User: </source>
         <translation>用户：</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="82"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="86"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Group: </source>
         <translation>组：</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="168"/>
         <location filename="MainStation/mainwindow.cpp" line="200"/>
         <source>Image Acquisit</source>
@@ -3190,36 +3526,63 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="MainStation/mainwindow.cpp" line="201"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="173"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Explore Study</source>
         <translation>检查列表</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="202"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="174"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Image View</source>
         <translation>图像查看</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="203"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="175"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Report Edit</source>
         <translation>报告编辑</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="204"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="176"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Archive Utilities</source>
         <translation>归档工具</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="205"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="177"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>System Settings</source>
         <translation>系统设置</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="206"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="178"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Exit</source>
         <translation>退出系统</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/mainwindow.cpp" line="260"/>
+=======
+        <location filename="MainStation/mainwindow.cpp" line="233"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Are you sure to exit?</source>
         <translation>确定要退出吗？</translation>
     </message>
@@ -3934,46 +4297,79 @@ Display format reset.</source>
 <context>
     <name>ProcedureItemModel</name>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="189"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="180"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Procedure ID</source>
         <translation>过程名称</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="191"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="182"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Body Part</source>
         <translation>部位</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="193"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="184"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Body Type</source>
         <translation>体型</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="195"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="186"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Position</source>
         <translation>体位</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="197"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="188"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Tube Voltage</source>
         <translation>KVP</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="199"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="190"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Tube Current</source>
         <translation>mA</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="201"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="192"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Exposure Time</source>
         <translation>mS</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="211"/>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="202"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Window Center</source>
         <translation>窗位</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="213"/>
         <source>Window Width</source>
         <translation>窗宽</translation>
@@ -3983,6 +4379,12 @@ Display format reset.</source>
         <source>Enhance Config</source>
         <translation>图像增强</translation>
     </message>
+=======
+        <location filename="ImageAcquisitor/procedureitemmodel.cpp" line="204"/>
+        <source>Window Width</source>
+        <translation>窗宽</translation>
+    </message>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 </context>
 <context>
     <name>QObject</name>
@@ -4017,9 +4419,15 @@ Display format reset.</source>
         <translation type="vanished">硬拷贝</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/procedureitem.h" line="89"/>
         <location filename="ImageAcquisitor/procedureitem.h" line="95"/>
         <location filename="ImageAcquisitor/procedureitem.h" line="101"/>
+=======
+        <location filename="ImageAcquisitor/procedureitem.h" line="87"/>
+        <location filename="ImageAcquisitor/procedureitem.h" line="93"/>
+        <location filename="ImageAcquisitor/procedureitem.h" line="99"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
@@ -4276,12 +4684,20 @@ Display format reset.</source>
         <translation type="vanished">本地</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="803"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="843"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Received %1 rows</source>
         <translation>已接收%1行</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="863"/>
+=======
+        <location filename="ImageAcquisitor/imageacquisitwidget.cpp" line="903"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Calibration %1%% completed.</source>
         <translation>校正完成%1%%。</translation>
     </message>
@@ -4443,12 +4859,20 @@ Display format reset.</source>
         <translation></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="StructuredReport/reporteditwidget.cpp" line="236"/>
+=======
+        <location filename="StructuredReport/reporteditwidget.cpp" line="212"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Open Structured Report</source>
         <translation>打开报告</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="StructuredReport/reporteditwidget.cpp" line="238"/>
+=======
+        <location filename="StructuredReport/reporteditwidget.cpp" line="214"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>SR File (*.dcm);;All Files (*.*)</source>
         <translation>报告文件（*.dcm）;;所有文件(*.*）</translation>
     </message>
@@ -5647,12 +6071,20 @@ Display format reset.</source>
         <translation>开始采集</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/studyexplorerwidget.cpp" line="142"/>
+=======
+        <location filename="MainStation/studyexplorerwidget.cpp" line="143"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Create Study Database</source>
         <translation>创建检查数据库</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="MainStation/studyexplorerwidget.cpp" line="143"/>
+=======
+        <location filename="MainStation/studyexplorerwidget.cpp" line="144"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>Create study database failed: %1.</source>
         <translation>创建检查数据库失败：%1。</translation>
     </message>
@@ -5781,17 +6213,26 @@ Display format reset.</source>
     </message>
     <message>
         <location filename="ImageAcquisitor/studyregisterwidget.ui" line="283"/>
+<<<<<<< HEAD
         <source>Start Acquisit</source>
         <translation>开始采集</translation>
     </message>
     <message>
         <location filename="ImageAcquisitor/studyregisterwidget.ui" line="293"/>
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         <source>New Study</source>
         <translation>新建检查</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Acquisition</source>
         <translation type="vanished">图像采集</translation>
+=======
+        <location filename="ImageAcquisitor/studyregisterwidget.ui" line="293"/>
+        <source>Acquisition</source>
+        <translation>图像采集</translation>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     </message>
     <message>
         <location filename="ImageAcquisitor/studyregisterwidget.ui" line="303"/>

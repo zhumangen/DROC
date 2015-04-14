@@ -8,8 +8,13 @@
 #include "dcmtk/dcmdata/dcdeftag.h"
 #include "dcmtk/dcmdata/dcuid.h"
 
+<<<<<<< HEAD
 ImageEditDialog::ImageEditDialog(QWidget *parent) :
     dcmFile(0),
+=======
+ImageEditDialog::ImageEditDialog(DcmFileFormat &dcmff, QWidget *parent) :
+    dcmFile(dcmff),
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     QDialog(parent),
     ui(new Ui::ImageEditDialog)
 {
@@ -29,10 +34,15 @@ void ImageEditDialog::init()
 {
     imageEditView = new ImageEditGraphicsView;
     ui->horizontalLayout->insertWidget(0, imageEditView);
+<<<<<<< HEAD
+=======
+    imageEditView->setFileFormat(&dcmFile);
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 
     setupConnections();
 }
 
+<<<<<<< HEAD
 void ImageEditDialog::setFileFormat(DcmFileFormat *dff)
 {
     dcmFile = dff;
@@ -44,6 +54,8 @@ void ImageEditDialog::setImageTransform(int angle, int hori, int vert)
     imageEditView->setImageTransform(angle, hori, vert);
 }
 
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 void ImageEditDialog::setupConnections()
 {
     connect(ui->imageRFlagButton, SIGNAL(clicked()), imageEditView, SLOT(addRFlag()));
@@ -80,7 +92,11 @@ void ImageEditDialog::onImageOk()
     // do something...
     imageEditView->saveImage();
 
+<<<<<<< HEAD
     DcmDataset *dset = dcmFile->getDataset();
+=======
+    DcmDataset *dset = dcmFile.getDataset();
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     DcmItem *ditem;
     dset->findAndGetSequenceItem(DCM_ReferencedImageSequence, ditem);
     if (!ditem) {

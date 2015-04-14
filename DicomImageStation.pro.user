@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.0.1, 2015-04-14T19:10:53. -->
+=======
+<!-- Written by QtCreator 3.0.1, 2015-04-11T20:11:15. -->
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -103,11 +107,15 @@
     </valuemap>
     <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+<<<<<<< HEAD
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges">
      <value type="QString">INCLUDE=C:\Program Files\Microsoft Visual Studio 10.0\VC\INCLUDE;C:\Program Files\Microsoft Visual Studio 10.0\VC\ATLMFC\INCLUDE;C:\Program Files\Microsoft SDKs\Windows\v7.0A\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\zlib-1.2.5\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\tiff-3.9.4\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libxml2-2.7.7\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libpng-1.4.3\include;</value>
      <value type="QString">LIB=C:\Program Files\Microsoft Visual Studio 10.0\VC\LIB;C:\Program Files\Microsoft Visual Studio 10.0\VC\ATLMFC\LIB;C:\Program Files\Microsoft SDKs\Windows\v7.0A\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\zlib-1.2.5\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\tiff-3.9.4\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libxml2-2.7.7\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libpng-1.4.3\lib;</value>
      <value type="QString">PATH=C:\Qt\Qt5.2.1\5.2.1\msvc2010_opengl\bin;C:\Program Files\Microsoft F#\v4.0\;C:\Program Files\Microsoft Visual Studio 10.0\VSTSDB\Deploy;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 10.0\VC\BIN;C:\Program Files\Microsoft Visual Studio 10.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files\Microsoft Visual Studio 10.0\VC\VCPackages;C:\Program Files\HTML Help Workshop;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Performance Tools;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\bin</value>
     </valuelist>
+=======
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Debug</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
@@ -160,11 +168,15 @@
     </valuemap>
     <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+<<<<<<< HEAD
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges">
      <value type="QString">INCLUDE=C:\Program Files\Microsoft Visual Studio 10.0\VC\INCLUDE;C:\Program Files\Microsoft Visual Studio 10.0\VC\ATLMFC\INCLUDE;C:\Program Files\Microsoft SDKs\Windows\v7.0A\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\zlib-1.2.5\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\tiff-3.9.4\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libxml2-2.7.7\include;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libpng-1.4.3\include;</value>
      <value type="QString">LIB=C:\Program Files\Microsoft Visual Studio 10.0\VC\LIB;C:\Program Files\Microsoft Visual Studio 10.0\VC\ATLMFC\LIB;C:\Program Files\Microsoft SDKs\Windows\v7.0A\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\zlib-1.2.5\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\tiff-3.9.4\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libxml2-2.7.7\lib;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\libpng-1.4.3\lib;</value>
      <value type="QString">PATH=C:\Qt\Qt5.2.1\5.2.1\msvc2010_opengl\bin;C:\Program Files\Microsoft F#\v4.0\;C:\Program Files\Microsoft Visual Studio 10.0\VSTSDB\Deploy;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 10.0\VC\BIN;C:\Program Files\Microsoft Visual Studio 10.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files\Microsoft Visual Studio 10.0\VC\VCPackages;C:\Program Files\HTML Help Workshop;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Performance Tools;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\DCMTK_SUPPORT\dcmtk-3.6.0-win32-i386-support_MD\openssl-1.0.0c\bin</value>
     </valuelist>
+=======
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Release</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
@@ -247,7 +259,11 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
+<<<<<<< HEAD
   <value type="QByteArray">{295079e8-2ffc-4721-96ca-13ceac3e85e8}</value>
+=======
+  <value type="QByteArray">{4560a448-8dfa-428f-aa4a-c3c744bcf356}</value>
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>

@@ -15,5 +15,10 @@ ImageProcessThread::ImageProcessThread(QObject *parent) :
 
 void ImageProcessThread::run()
 {
+<<<<<<< HEAD
     //LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, region, width, height, depth);
+=======
+    //int ret = LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, region, width, height, depth);
+    //exit(ret);
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 }

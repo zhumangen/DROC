@@ -1,7 +1,10 @@
 #include "imageacquisitwidget.h"
 #include "ui_imageacquisitwidget.h"
 
+<<<<<<< HEAD
 #include "../share/global.h"
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 #include "../share/configfiles.h"
 #include "../MainStation/mainwindow.h"
 #include "procedureitemmodel.h"
@@ -33,7 +36,10 @@
 #include <QDir>
 #include <QFile>
 #include <QTimer>
+<<<<<<< HEAD
 #include <QSettings>
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 
 ImageAcquisitWidget::ImageAcquisitWidget(QWidget *parent) :
     imgFormat(new DcmFileFormat),
@@ -51,12 +57,15 @@ ImageAcquisitWidget::ImageAcquisitWidget(QWidget *parent) :
 
 ImageAcquisitWidget::~ImageAcquisitWidget()
 {
+<<<<<<< HEAD
     QSettings s;
     s.setValue(IMAGE_CCW_ROTATE, ui->ccw90Check->isChecked());
     s.setValue(IMAGE_CW_ROTATE, ui->cw90Check->isChecked());
     s.setValue(IMAGE_HORI_FLIP, ui->hflipCheck->isChecked());
     s.setValue(IMAGE_VERT_FLIP, ui->vflipCheck->isChecked());
 
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     freeDetector();
     serialPort->close();
     delete imgFormat;
@@ -131,6 +140,7 @@ void ImageAcquisitWidget::init()
     ui->acqBodyPosCombo->addItems(ProcedureItem::BodyPositionStringTable);
     ui->seriesDescCombo->addItems(QSettings().value(SERIES_DESCRIPTION).toStringList());
 
+<<<<<<< HEAD
     QSettings s;
     ui->ccw90Check->setChecked(s.value(IMAGE_CCW_ROTATE, 0).toBool());
     ui->cw90Check->setChecked(s.value(IMAGE_CW_ROTATE, 0).toBool());
@@ -141,6 +151,12 @@ void ImageAcquisitWidget::init()
     createConnections();
     initDcmFileFormat();
     updateDetGenModels();
+=======
+    createComponents();
+    createConnections();
+    updateDetGenModels();
+    initDcmFileFormat();
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     updateExposureParams();
 }
 
@@ -211,6 +227,7 @@ void ImageAcquisitWidget::initDcmFileFormat()
     dset->putAndInsertString(DCM_InstitutionName, instInfo.name.toLocal8Bit().data());
     dset->putAndInsertString(DCM_InstitutionAddress, instInfo.addr.toLocal8Bit().data());
     dset->putAndInsertString(DCM_InstitutionalDepartmentName, instInfo.tel.toLatin1().data());
+<<<<<<< HEAD
 }
 
 void ImageAcquisitWidget::updateDetectorSpecificParams()
@@ -225,6 +242,17 @@ void ImageAcquisitWidget::updateDetectorSpecificParams()
     dset->putAndInsertUint16(DCM_HighBit, detInfo.highBit);
     dset->putAndInsertUint16(DCM_SamplesPerPixel, 1);
     dset->putAndInsertString(DCM_NumberOfFrames, "1");
+=======
+    QString spacings = QString("%1\\%2").arg(detInfo.xSpacing, 0, 'f', 6).arg(detInfo.ySpacing, 0, 'f', 6);
+    dset->putAndInsertString(DCM_ImagerPixelSpacing, spacings.toLatin1().data());
+    dset->putAndInsertString(DCM_PixelSpacing, spacings.toLatin1().data());
+    dset->putAndInsertUint16(DCM_SamplesPerPixel, 1);
+    dset->putAndInsertString(DCM_PhotometricInterpretation, "MONOCHROME1");
+    dset->putAndInsertString(DCM_NumberOfFrames, "1");
+    dset->putAndInsertUint16(DCM_BitsAllocated, detInfo.bitsAllocated);
+    dset->putAndInsertUint16(DCM_BitsStored, detInfo.bitsStored);
+    dset->putAndInsertUint16(DCM_HighBit, detInfo.highBit);
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     dset->putAndInsertUint16(DCM_PixelRepresentation, 0);
     dset->putAndInsertString(DCM_RescaleIntercept, "0");
     dset->putAndInsertString(DCM_RescaleSlope, "1");
@@ -267,7 +295,10 @@ void ImageAcquisitWidget::updateDetGenModels()
             detInfo.highBit = 13;
             break;
         }
+<<<<<<< HEAD
         updateDetectorSpecificParams();
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         initDetector();
     }
 
@@ -640,12 +671,20 @@ void ImageAcquisitWidget::startCapture(bool start)
             crAcqThread->setAbort(false);
             crAcqThread->start();
             ui->acquisitButton->setChecked(true);
+<<<<<<< HEAD
             ui->acquisitButton->setText(tr("Abort Capture"));
+=======
+            ui->acquisitButton->setText(tr("Abort Acquisit"));
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             break;
         case DM_Samsung_1717SGC:
             if (StartCapture_Davinci()) {
                 ui->acquisitButton->setChecked(true);
+<<<<<<< HEAD
                 ui->acquisitButton->setText(tr("Abort Capture"));
+=======
+                ui->acquisitButton->setText(tr("Abort Acquisit"));
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             }
             break;
         }
@@ -657,7 +696,11 @@ void ImageAcquisitWidget::startCapture(bool start)
         case DM_Samsung_1717SGC:
             mc_DavinciIntF.rVDACQ_Abort(m_CBRAcq);
             ui->acquisitButton->setChecked(false);
+<<<<<<< HEAD
             ui->acquisitButton->setText(tr("Start Capture"));
+=======
+            ui->acquisitButton->setText(tr("Start Acquisit"));
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             delete[] frameBuffer;
             frameBuffer = 0;
             break;
@@ -668,7 +711,11 @@ void ImageAcquisitWidget::startCapture(bool start)
 void ImageAcquisitWidget::acqFinished_CareRay()
 {
     ui->acquisitButton->setChecked(false);
+<<<<<<< HEAD
     ui->acquisitButton->setText(tr("Start Capture"));
+=======
+    ui->acquisitButton->setText(tr("Start Acquisit"));
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 
     if (crAcqThread->getImage(frameBuffer)) {
         crAcqThread->getImageSize(frameWidth, frameHeight);
@@ -788,6 +835,7 @@ void ImageAcquisitWidget::dumyImageCapture()
 {
     DcmFileFormat dcmff;
     dcmff.loadFile("test.dcm");
+<<<<<<< HEAD
     ImageEditDialog dialog(this);
     int angle = 0, hori, vert;
     if (ui->ccw90Check->isChecked()) angle -= 90;
@@ -796,6 +844,9 @@ void ImageAcquisitWidget::dumyImageCapture()
     vert = ui->vflipCheck->isChecked()?1:0;
     dialog.setImageTransform(angle, hori, vert);
     dialog.setFileFormat(&dcmff);
+=======
+    ImageEditDialog dialog(dcmff, this);
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
     if (QDialog::Accepted == dialog.exec()) {
         dcmff.saveFile("test.dcm", dcmff.getDataset()->getOriginalXfer());
     }
@@ -1063,6 +1114,7 @@ void ImageAcquisitWidget::insertImageToDataset()
         dset->putAndInsertUint16Array(DCM_PixelData, (Uint16*)frameBuffer, frameWidth*frameHeight);
 
 
+<<<<<<< HEAD
         ImageEditDialog dialog(this);
         int angle = 0, hori, vert;
         if (ui->ccw90Check->isChecked()) angle -= 90;
@@ -1071,6 +1123,9 @@ void ImageAcquisitWidget::insertImageToDataset()
         vert = ui->vflipCheck->isChecked()?1:0;
         dialog.setImageTransform(angle, hori, vert);
         dialog.setFileFormat(imgFormat);
+=======
+        ImageEditDialog dialog(*imgFormat, this);
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         if (QDialog::Accepted == dialog.exec()) {
             QString imageFile;
             savePrImageToDb(*imgFormat, imageFile);
@@ -1092,8 +1147,11 @@ void ImageAcquisitWidget::insertImageToDataset()
 
         delete[] frameBuffer;
         frameBuffer = 0;
+<<<<<<< HEAD
 
         startCapture(true);
+=======
+>>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 }
 
 bool ImageAcquisitWidget::savePrImageToDb(DcmFileFormat &dcmff, QString &fileName)
