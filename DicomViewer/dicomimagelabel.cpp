@@ -28,10 +28,7 @@ void DicomImageLabel::init()
 {
     if (imageInst) {
         QPixmap pixmap;
-<<<<<<< HEAD
         imageInst->setImageType(false);
-=======
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         imageInst->getPixmap(pixmap);
         setPixmap(pixmap.scaled(IMAGE_LABEL_SIZE-2, IMAGE_LABEL_SIZE-2, Qt::KeepAspectRatio));
     }

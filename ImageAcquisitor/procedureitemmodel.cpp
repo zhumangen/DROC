@@ -165,10 +165,7 @@ bool ProcedureItemModel::setData(const QModelIndex &index, const QVariant &value
         case EnhanceConfig:
             tempUInt = value.toUInt(&ok);
             if (ok) item->imgEhr = (ImageEnhancer)tempUInt;
-<<<<<<< HEAD
             break;
-=======
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 
         default:
             return false;

@@ -1257,11 +1257,7 @@
             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
            </property>
            <property name="text">
-<<<<<<< HEAD
             <string>Start Capture</string>
-=======
-            <string>Start Acquisit</string>
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
            </property>
            <property name="checkable">
             <bool>true</bool>

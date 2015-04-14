@@ -543,19 +543,12 @@ void DicomImageView::mouseReleaseEvent(QMouseEvent *event)
             case Pan:
                 setCursor(Qt::OpenHandCursor);
                 break;
-<<<<<<< HEAD
             default:
                 if ((!scene->selectedItems().size()) && rubberBandRect().isValid()) {
                     image->setImageType(rawType);
                     image->setRoiWindow(pixmapItem->mapFromScene(mapToScene(rubberBandRect())).boundingRect());
                     refreshPixmap();
                 }
-=======
-            case ROIWindow:
-                image->setImageType(rawType);
-                image->setRoiWindow(pixmapItem->mapFromScene(mapToScene(rubberBandRect())).boundingRect());
-                refreshPixmap();
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
                 break;
             }
         }
@@ -566,7 +559,6 @@ void DicomImageView::mouseReleaseEvent(QMouseEvent *event)
 
 void DicomImageView::wheelEvent(QWheelEvent *e)
 {
-<<<<<<< HEAD
     QPoint delta = e->angleDelta();
     manualZoom = true;
     if (delta.y() >= 0) factor *= (1+delta.y()/600.0);
@@ -575,9 +567,6 @@ void DicomImageView::wheelEvent(QWheelEvent *e)
     if (factor < 0.05) factor = 0.05;
     resizePixmapItem();
     repositionAuxItems();
-=======
-    e->ignore();
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 }
 
 void DicomImageView::leaveEvent(QEvent *event)

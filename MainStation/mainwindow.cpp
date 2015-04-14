@@ -163,24 +163,14 @@ void MainWindow::onCurrentTabChanged()
                 return;
             }
         }*/
-<<<<<<< HEAD
 
         if (!acquisitTab->hasStudy()) {
             ui->tabWidget->setCurrentWidget(prevTab);
-=======
-        if (!acquisitTab->hasStudy()) {
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             if (QMessageBox::question(this, tr("Image Acquisit"),
                                       tr("A study should be registered before starting acquisition, register one now?"),
                                       QMessageBox::Yes|QMessageBox::No) ==
                     QMessageBox::Yes) {
                 ui->tabWidget->setCurrentWidget(registerTab);
-<<<<<<< HEAD
-=======
-                prevTab = registerTab;
-            } else {
-                ui->tabWidget->setCurrentWidget(prevTab);
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             }
         } else {
             prevTab = widget;

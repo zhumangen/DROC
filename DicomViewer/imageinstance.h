@@ -43,15 +43,9 @@ public:
     void setRoiWindow(const QRectF &rect);
     void setDefaultWindow()
     {   if (rawType) {
-<<<<<<< HEAD
             rawCenter = defCenter; rawWidth = defWidth;
         } else {
             winCenter = defCenter; winWidth = defWidth;
-=======
-            winCenter = defCenter; winWidth = defWidth;
-        } else {
-            rawCenter = defCenter; rawWidth = defWidth;
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
         }
     }
 

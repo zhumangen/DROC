@@ -19,11 +19,7 @@ QMAKE_CFLAGS_DEBUG += /MDd
 QMAKE_CXXFLAGS_RELEASE += /MD
 QMAKE_CXXFLAGS_DEBUG += /MDd
 
-<<<<<<< HEAD
-DCMTK = $$quote("C:\Program Files\DCMTK_MD")
-=======
 DCMTK = $$quote("C:\Program Files (x86)\DCMTK_MDd")
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 DCMTK_INCLUDE = $$DCMTK"\include"
 INCLUDEPATH += $$DCMTK_INCLUDE
 DCMTK_LIB = $$DCMTK"\lib"

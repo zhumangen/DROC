@@ -164,19 +164,7 @@ void ImageEditGraphicsView::saveImage()
                 }
             }
 
-<<<<<<< HEAD
             dcmImage->flipImage(hflip, vflip);
-=======
-            if (hflip && vflip) {
-                rotateAngle += 180;
-                hflip = 0;
-                vflip = 0;
-            } else if (hflip) {
-                dcmImage->flipImage(1, 0);
-            } else if (vflip) {
-                dcmImage->flipImage(0, 1);
-            }
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             dcmImage->rotateImage(rotateAngle%360);
 
             DcmDataset *dset = ff->getDataset();
@@ -201,15 +189,10 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
         const char *value = 0;
         dset->findAndGetString(DCM_PixelSpacing, value);
         QStringList spacings = QString::fromLatin1(value).split('\\', QString::SkipEmptyParts);
-<<<<<<< HEAD
         if (spacings.size() == 2) {
             xSpacing = spacings.first().toDouble();
             ySpacing = spacings.last().toDouble();
         }
-=======
-        xSpacing = spacings.first().toDouble();
-        ySpacing = spacings.last().toDouble();
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 
         dset->findAndGetString(DCM_WindowCenter, value);
         winCenter = QString::fromLatin1(value).toDouble();
@@ -227,11 +210,10 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
         DicomImage *dcmImage = new DicomImage(dff, dset->getOriginalXfer());
         if (dcmImage && (dcmImage->getStatus()==EIS_Normal)) {
             ff = dff;
-<<<<<<< HEAD
+
             dcmImage->rotateImage(rotateAngle);
             dcmImage->flipImage(hflip, vflip);
-=======
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
+
             imageList.prepend(dcmImage);
             imageIndex = 0;
             pixmapItem->setPixmap(getPixmap());
@@ -241,7 +223,6 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
             repositionAuxItems();
             updateScalors();
 
-<<<<<<< HEAD
             if (process) {
                 ImageEnhancer en;
                 if ((mainWindow->getProcModel()->getEnhancerConfig(procId, en)) &&
@@ -259,21 +240,6 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
                     dset->findAndGetUint16(DCM_Rows, thread->height);
                     thread->start();*/
                 }
-=======
-            if (process) {/*
-                ImageProcessThread *thread = new ImageProcessThread;
-                connect(thread, SIGNAL(finished()), this, SLOT(onProcessingFinished()));
-                connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-                dset->findAndGetUint16Array(DCM_PixelData, srcBuffer, &imageSize);
-                destBuffer = new Uint16[imageSize];
-                thread->srcBuf = (const void*)srcBuffer;
-                thread->destBuf = (void*)destBuffer;
-                thread->region = "IeConfig/ChestAP.iee";
-                dset->findAndGetUint16(DCM_BitsStored, thread->depth);
-                dset->findAndGetUint16(DCM_Columns, thread->width);
-                dset->findAndGetUint16(DCM_Rows, thread->height);
-                thread->start();*/
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
             }
 
             return true;
@@ -672,7 +638,6 @@ void ImageEditGraphicsView::mouseReleaseEvent(QMouseEvent *event)
     QGraphicsView::mouseReleaseEvent(event);
 }
 
-<<<<<<< HEAD
 void ImageEditGraphicsView::mouseDoubleClickEvent(QMouseEvent *event)
 {
     if (itemAt(event->pos()) == clipRectItem)
@@ -689,11 +654,6 @@ void ImageEditGraphicsView::wheelEvent(QWheelEvent *event)
     if (factor < 0.05) factor = 0.05;
     resizePixmapItem();
     repositionAuxItems();
-=======
-void ImageEditGraphicsView::wheelEvent(QWheelEvent *event)
-{
-    event->ignore();
->>>>>>> ca59fabbdc88c4f2995bcfc833f54cc27c9797fa
 }
 
 void ImageEditGraphicsView::leaveEvent(QEvent *event)
