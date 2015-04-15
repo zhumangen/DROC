@@ -79,7 +79,7 @@ public slots:
     void saveImage();
     void clear();
 
-    void onProcessingFinished();
+    void onProcessingFinished(bool ok);
 
 protected:
     void mousePressEvent(QMouseEvent *event);

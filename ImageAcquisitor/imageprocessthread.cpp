@@ -5,7 +5,6 @@
 ImageProcessThread::ImageProcessThread(QObject *parent) :
     srcBuf(0),
     destBuf(0),
-    region(0),
     width(0),
     height(0),
     depth(0),
@@ -15,5 +14,7 @@ ImageProcessThread::ImageProcessThread(QObject *parent) :
 
 void ImageProcessThread::run()
 {
-    //LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, region, width, height, depth);
+    config.replace(QChar('/'), QChar('\\'));
+    int ret = LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, config.toLocal8Bit().data(), width, height, depth);
+    emit resultReady(ret);
 }

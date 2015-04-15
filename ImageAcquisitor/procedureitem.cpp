@@ -35,5 +35,5 @@ const S_ImageEnhancerNameMap ImageEnhancerNameMap[] = {
     {IE_KneeJointLAT,     "KneeJointLAT",      "IeConfig/KneeJointLAT.iee"},
     {IE_LSpineAP,         "LSpineAP",          "IeConfig/LSpineAP.iee"},
     {IE_LSpineLAT,        "LSpineLAT",         "IeConfig/LSpineLAT.iee"},
-    {IE_PelvisAP,         "PelvisAP",          "IeConfig/PelvisAP.iee"},
+    //{IE_PelvisAP,         "PelvisAP",          "IeConfig/PelvisAP.iee"},
 };

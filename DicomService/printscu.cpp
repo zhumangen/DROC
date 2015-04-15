@@ -71,7 +71,7 @@ OFCondition printscu(const QList<DicomImageView*> &viewList, const PrintScp &pri
             image->writeFrameToDataset(*dset);
             dvi.getCurrentPState().attachImage(file, true);
 
-            ushort pvalue = image->getPhotometricInterpretation()==EPI_Monochrome1?65535:0;
+            //ushort pvalue = image->getPhotometricInterpretation()==EPI_Monochrome1?0:65535;
             ulong bitmapSize = dvi.getCurrentPState().getPrintBitmapSize();
             char *pixelData = new char[bitmapSize];
             ulong width, height;
@@ -83,7 +83,7 @@ OFCondition printscu(const QList<DicomImageView*> &viewList, const PrintScp &pri
             for (ulong y = 0; y < height; ++y) {
                 for (ulong x = 0; x < width; ++x) {
                     if (textLayer.valid(x, y) && (textLayer.pixel(x, y)!=QRgb(0xff000000)))
-                        *(p + y * width + x) = pvalue;
+                        *(p + y * width + x) = 65535;
                 }
             }
 

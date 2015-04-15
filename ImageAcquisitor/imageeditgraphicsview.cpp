@@ -36,6 +36,7 @@
 #include <QFontDialog>
 #include <QMessageBox>
 #include <QPainter>
+#include <QApplication>
 
 ImageEditGraphicsView::ImageEditGraphicsView(QWidget *parent) :
     scene(new QGraphicsScene(this)),
@@ -153,7 +154,7 @@ void ImageEditGraphicsView::saveImage()
                     painter.end();
                     //pixImage = pixImage.scaled(pixImage.size()*8, Qt::KeepAspectRatio, Qt::SmoothTransformation);
 
-                    Uint16 pValue = dcmImage->getPhotometricInterpretation()==EPI_Monochrome1?65535:0;
+                    Uint16 pValue = dcmImage->getPhotometricInterpretation()==EPI_Monochrome1?0:65535;
                     QPoint pos = item->pos().toPoint();
                     for (int i = pos.y(); (i < pixImage.height()+pos.y()) && (i < rows); ++i) {
                         for (int j = pos.x(); (j < pixImage.width()+pos.x()) && (j < cols); ++j) {
@@ -226,19 +227,20 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
             if (process) {
                 ImageEnhancer en;
                 if ((mainWindow->getProcModel()->getEnhancerConfig(procId, en)) &&
-                        (ImageEnhancerNameMap[en].config)) {/*
+                        (ImageEnhancerNameMap[en].config)) {
                     ImageProcessThread *thread = new ImageProcessThread;
-                    connect(thread, SIGNAL(finished()), this, SLOT(onProcessingFinished()));
+                    connect(thread, SIGNAL(resultReady(bool)), this, SLOT(onProcessingFinished(bool)));
                     connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
                     dset->findAndGetUint16Array(DCM_PixelData, srcBuffer, &imageSize);
                     destBuffer = new Uint16[imageSize];
+                    QString path = QApplication::applicationDirPath();
                     thread->srcBuf = (const void*)srcBuffer;
                     thread->destBuf = (void*)destBuffer;
-                    thread->region = ImageEnhancerNameMap[en].config;
+                    thread->config = path.append(QString::fromLocal8Bit(ImageEnhancerNameMap[en].config));
                     dset->findAndGetUint16(DCM_BitsStored, thread->depth);
                     dset->findAndGetUint16(DCM_Columns, thread->width);
                     dset->findAndGetUint16(DCM_Rows, thread->height);
-                    thread->start();*/
+                    thread->start();
                 }
             }
 
@@ -252,20 +254,28 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
     return false;
 }
 
-void ImageEditGraphicsView::onProcessingFinished()
+void ImageEditGraphicsView::onProcessingFinished(bool ok)
 {
-    ff->getDataset()->putAndInsertUint16Array(DCM_PixelData, destBuffer, imageSize);
+    if (ok) {
+        ff->getDataset()->putAndInsertUint16Array(DCM_PixelData, destBuffer, imageSize);
+        DicomImage *image = new DicomImage(ff, ff->getDataset()->getOriginalXfer());
+        if (image->getStatus() == EIS_Normal) {
+            image->rotateImage(rotateAngle);
+            image->flipImage(hflip, vflip);
+            imageList.insert(imageIndex, image);
+            pixmapItem->setPixmap(getPixmap());
+            resizePixmapItem();
+            repositionAuxItems();
+        } else {
+            delete image;
+        }
+    }
+
     delete[] destBuffer;
     destBuffer = 0;
-    DicomImage *image = new DicomImage(ff, ff->getDataset()->getOriginalXfer());
-    if (image->getStatus() == EIS_Normal) {
-        imageList.insert(imageIndex, image);
-        pixmapItem->setPixmap(getPixmap());
-        resizePixmapItem();
-        repositionAuxItems();
-    } else {
-        delete image;
-    }
+    rotateAngle = 0;
+    hflip = 0;
+    vflip = 0;
 }
 
 void ImageEditGraphicsView::updateScalors()
@@ -550,8 +560,8 @@ void ImageEditGraphicsView::mouseMoveEvent(QMouseEvent *event)
     if (event->buttons() & Qt::RightButton) {
         QPoint delta = event->pos() - prevMousePos;
         prevMousePos = event->pos();
-        winCenter += delta.y()*10;
-        winWidth -= delta.x()*10;
+        winCenter += delta.y()*32;
+        winWidth -= delta.x()*32;
         if (winWidth < 0) winWidth = 0;
         pixmapItem->setPixmap(getPixmap());
         windowItem->setText(tr("WL:%1 WW:%2").arg(int(winCenter)).arg(int(winWidth)));

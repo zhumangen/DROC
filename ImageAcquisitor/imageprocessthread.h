@@ -12,13 +12,14 @@ public:
     void run();
 
 signals:
+    void resultReady(bool ok);
 
 public slots:
 
 public:
     const void *srcBuf;
     void *destBuf;
-    const char *region;
+    QString config;
     ushort width;
     ushort height;
     ushort depth;

@@ -482,7 +482,7 @@ void DicomImageView::mouseMoveEvent(QMouseEvent *event)
             QPoint delta = event->pos() - prevMousePos;
             prevMousePos = event->pos();
             image->setImageType(rawType);
-            image->setWindowDelta(-delta.y()*10, delta.x()*10);
+            image->setWindowDelta(-delta.y()*32, delta.x()*32);
             refreshPixmap();
         } else {
             switch (leftButton.state) {

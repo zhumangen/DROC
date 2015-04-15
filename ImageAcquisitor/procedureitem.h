@@ -15,7 +15,7 @@ enum ImageEnhancer {
     IE_KneeJointLAT,
     IE_LSpineAP,
     IE_LSpineLAT,
-    IE_PelvisAP,
+    //IE_PelvisAP,
 
     IE_EnhancerCount,
 };
