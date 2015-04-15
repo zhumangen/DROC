@@ -26,7 +26,7 @@ const QStringList ProcedureItem::BodyPositionStringTable = QStringList()
            QObject::tr("PLAT");
 
 const S_ImageEnhancerNameMap ImageEnhancerNameMap[] = {
-    {IE_None,             "",                  ""},
+    {IE_None,             "",                  NULL},
     {IE_AnkleJointAP,     "AnkleJointAP",      "IeConfig/AnkleJointAP.iee"},
     {IE_AnkleJointLAT,    "AnkleJointLAT",     "IeConfig/AnkleJointLAT.iee"},
     {IE_ChestAP,          "ChestAP",           "IeConfig/ChestAP.iee"},
