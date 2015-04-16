@@ -10,6 +10,7 @@
 #include "aboutdialog.h"
 #include "../ImageAcquisitor/studyregisterwidget.h"
 #include "../ImageAcquisitor/imageacquisitwidget.h"
+#include "../ImageAcquisitor/perspectiveviewwidget.h"
 #include "studyexplorerwidget.h"
 #include "archivewidget.h"
 #include "systemsettingswidget.h"
@@ -77,10 +78,26 @@ void MainWindow::createComponents()
 
     registerTab = new StudyRegisterWidget;
     acquisitTab = new ImageAcquisitWidget;
+    spectViewTab = new PerspectiveViewWidget;
 
     statusBar()->addPermanentWidget(new QLabel(tr("User: ").append(currentUser.name)));
     statusBar()->addPermanentWidget(new QLabel(tr("Group: ").append(currentGroup.name)));
     statusBar()->addPermanentWidget(new TimeLabel);
+}
+
+void MainWindow::setupComponents()
+{
+    ui->tabWidget->addTab(registerTab, tr("Patient Register"));
+    ui->tabWidget->addTab(acquisitTab, tr("Image Acquisit"));
+    ui->tabWidget->addTab(spectViewTab, tr("Spect View"));
+    ui->tabWidget->addTab(studyExplorerTab, tr("Explore Study"));
+    ui->tabWidget->addTab(imageViewTab, tr("Image View"));
+    ui->tabWidget->addTab(reportEditTab, tr("Report Edit"));
+    ui->tabWidget->addTab(archiveTab, tr("Archive Utilities"));
+    ui->tabWidget->addTab(settingsTab, tr("System Settings"));
+    ui->tabWidget->addTab(exitTab, tr("Exit"));
+    ui->tabWidget->setCurrentWidget(studyExplorerTab);
+    prevTab = studyExplorerTab;
 }
 
 void MainWindow::createConnections()
@@ -193,20 +210,6 @@ void MainWindow::onCurrentTabChanged()
     } else {
         prevTab = widget;
     }
-}
-
-void MainWindow::setupComponents()
-{
-    ui->tabWidget->addTab(registerTab, tr("Patient Register"));
-    ui->tabWidget->addTab(acquisitTab, tr("Image Acquisit"));
-    ui->tabWidget->addTab(studyExplorerTab, tr("Explore Study"));
-    ui->tabWidget->addTab(imageViewTab, tr("Image View"));
-    ui->tabWidget->addTab(reportEditTab, tr("Report Edit"));
-    ui->tabWidget->addTab(archiveTab, tr("Archive Utilities"));
-    ui->tabWidget->addTab(settingsTab, tr("System Settings"));
-    ui->tabWidget->addTab(exitTab, tr("Exit"));
-    ui->tabWidget->setCurrentWidget(studyExplorerTab);
-    prevTab = studyExplorerTab;
 }
 
 const InstitutionInfo& MainWindow::getInstInfo() const

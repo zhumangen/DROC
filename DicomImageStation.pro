@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui printsupport network serialport sql
+QT       += core gui printsupport network serialport sql axcontainer
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,11 +19,10 @@ QMAKE_CFLAGS_DEBUG += /MDd
 QMAKE_CXXFLAGS_RELEASE += /MD
 QMAKE_CXXFLAGS_DEBUG += /MDd
 
-DCMTK = $$quote("C:\Program Files (x86)\DCMTK_MDd")
-DCMTK_INCLUDE = $$DCMTK"\include"
-INCLUDEPATH += $$DCMTK_INCLUDE
-DCMTK_LIB = $$DCMTK"\lib"
-LIBS += $$DCMTK_LIB"\*.lib"
+INCLUDEPATH += "C:\Program Files\Matrox Imaging\Mil\Include"
+INCLUDEPATH += "C:\Program Files\DCMTK_MDd\include"
+LIBS += "C:\Program Files\Matrox Imaging\Mil\LIB\*"
+LIBS += "C:\Program Files\DCMTK_MDd\lib\*"
 LIBS += advapi32.lib wsock32.lib netapi32.lib ws2_32.lib
 LIBS += crapi.lib IeLauncher.lib
 
@@ -124,7 +123,8 @@ HEADERS += \
     ImageAcquisitor/IeLauncher.h \
     ImageAcquisitor/imageprocessthread.h \
     MainStation/exitwidget.h \
-    ImageAcquisitor/carerayacquisitthread.h
+    ImageAcquisitor/carerayacquisitthread.h \
+    ImageAcquisitor/perspectiveviewwidget.h
 
 SOURCES += \
     DicomService/echoscu.cpp \
@@ -208,7 +208,8 @@ SOURCES += \
     StructuredReport/diagnostictemplatedelegate.cpp \
     ImageAcquisitor/imageprocessthread.cpp \
     MainStation/exitwidget.cpp \
-    ImageAcquisitor/carerayacquisitthread.cpp
+    ImageAcquisitor/carerayacquisitthread.cpp \
+    ImageAcquisitor/perspectiveviewwidget.cpp
 
 FORMS += \
     GraphicsItem/graphicstextmarkdialog.ui \
@@ -232,6 +233,7 @@ FORMS += \
     ImageAcquisitor/studyregisterwidget.ui \
     ImageAcquisitor/newstudydialog.ui \
     StructuredReport/newitemdialog.ui \
-    MainStation/exitwidget.ui
+    MainStation/exitwidget.ui \
+    ImageAcquisitor/perspectiveviewwidget.ui
 
 

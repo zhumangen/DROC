@@ -14,6 +14,7 @@ class ArchiveWidget;
 class SystemSettingsWidget;
 class ExitWidget;
 class ProcedureItemModel;
+class PerspectiveViewWidget;
 
 namespace Ui {
 class MainWindow;
@@ -71,6 +72,7 @@ private:
     StudyExplorerWidget *studyExplorerTab;
     ArchiveWidget *archiveTab;
     SystemSettingsWidget *settingsTab;
+    PerspectiveViewWidget *spectViewTab;
     ExitWidget *exitTab;
     QWidget *prevTab;
 };
