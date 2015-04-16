@@ -1246,7 +1246,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Body:</string>
+            <string>Body Type</string>
            </property>
            <property name="buddy">
             <cstring>acqBodyTypeCombo</cstring>
@@ -1274,7 +1274,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Position:</string>
+            <string>Body Pos</string>
            </property>
            <property name="buddy">
             <cstring>acqBodyPosCombo</cstring>
