@@ -7,6 +7,7 @@
         <file alias="exp_green.png">Resources/images/exposure_green.png</file>
         <file alias="exp_normal.png">Resources/images/exposure_normal.png</file>
         <file alias="exp_yellow.png">Resources/images/exposure_yellow.png</file>
+        <file alias="splash.jpg">Resources/images/splash.jpg</file>
     </qresource>
     <qresource prefix="/imagetool">
         <file>Resources/imagetool/cursor.png</file>

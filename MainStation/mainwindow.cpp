@@ -55,7 +55,7 @@ void MainWindow::init()
 {
     mainWindow = this;
 
-    QSplashScreen splash(QPixmap(":/images/splash.png"));
+    QSplashScreen splash(QPixmap(":/images/splash.jpg"));
     splash.show();
 
     splash.showMessage(tr("Creating modules..."), Qt::AlignCenter, Qt::green);
