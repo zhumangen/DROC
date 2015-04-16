@@ -106,7 +106,12 @@ void SystemSettingsWidget::initLocalSettingsUi()
     ui->serialPortCombo->setCurrentText(settings.commInfo.serialPortName);
 
     ui->sendAfterAcqCheck->setChecked(settings.wflow.sendAfterAcqusition);
+    ui->storeScpCombo->setCurrentText(settings.wflow.storeScpId);
     ui->dbFolderEdit->setText(settings.dbfolder);
+    ui->ccw90Check->setChecked(settings.commInfo.ccw90);
+    ui->cw90Check->setChecked(settings.commInfo.cw90);
+    ui->hflipCheck->setChecked(settings.commInfo.hflip);
+    ui->vflipCheck->setChecked(settings.commInfo.vflip);
 
     ui->patientIdDigitsSpin->setValue(settings.patientId.digits);
     ui->patientIdPrefixEdit->setText(settings.patientId.prefix);
@@ -133,6 +138,10 @@ void SystemSettingsWidget::onLocalSettingsSave()
     settings.wflow.sendAfterAcqusition = ui->sendAfterAcqCheck->isChecked();
     settings.wflow.storeScpId = ui->storeScpCombo->currentText().isEmpty()?QString():ui->storeScpCombo->currentText();
     settings.dbfolder = ui->dbFolderEdit->text();
+    settings.commInfo.ccw90 = ui->ccw90Check->isChecked();
+    settings.commInfo.cw90 = ui->cw90Check->isChecked();
+    settings.commInfo.hflip = ui->hflipCheck->isChecked();
+    settings.commInfo.vflip = ui->vflipCheck->isChecked();
 
     settings.patientId.digits = ui->patientIdDigitsSpin->value();
     settings.patientId.prefix = ui->patientIdPrefixEdit->text();
@@ -146,8 +155,10 @@ void SystemSettingsWidget::onLocalSettingsSave()
     s.setValue(ACCNUMBER_START, ui->accNumStartSpin->value());
 
     settings.saveConfig();
-
     emit detGenModelUpdated();
+
+    QMessageBox::information(this, tr("Save Local Settings"),
+                             tr("Local settings saved."));
 }
 
 void SystemSettingsWidget::initIdStarts()
@@ -164,9 +175,8 @@ void SystemSettingsWidget::createConnections()
 
     connect(ui->setupSaveButton, SIGNAL(clicked()), this, SLOT(onLocalSettingsSave()));
     connect(ui->scpSaveButton, SIGNAL(clicked()), this, SLOT(onScpSave()));
-    connect(ui->procSaveButton, SIGNAL(clicked()), procModel, SLOT(saveData()));
-    connect(ui->userGroupSaveButton, SIGNAL(clicked()), userModel, SLOT(saveData()));
-    connect(ui->userGroupSaveButton, SIGNAL(clicked()), groupModel, SLOT(saveData()));
+    connect(ui->procSaveButton, SIGNAL(clicked()), this, SLOT(onProcSave()));
+    connect(ui->userGroupSaveButton, SIGNAL(clicked()), this, SLOT(onUserGroupSave()));
 
     connect(ui->scpTableView, SIGNAL(clicked(QModelIndex)), scpModel, SLOT(onItemClicked(QModelIndex)));
     connect(scpModel, SIGNAL(enableMoreOptions(bool)), this, SLOT(onEnableMoreOptions(bool)));
@@ -250,6 +260,7 @@ void SystemSettingsWidget::onStoreScpChanged(const QList<DicomScp *> &scps)
     foreach (DicomScp *scp, scps) {
         ui->storeScpCombo->addItem(scp->id);
     }
+    ui->sendAfterAcqCheck->setEnabled(ui->storeScpCombo->count());
 }
 
 void SystemSettingsWidget::onEnableMoreOptions(bool yes)
@@ -315,7 +326,11 @@ void SystemSettingsWidget::onScpMore()
 
 void SystemSettingsWidget::onScpSave()
 {
-    if (scpModel->saveData()) resetScps();
+    if (scpModel->saveData()) {
+        resetScps();
+        QMessageBox::information(this, tr("Save Remote SCPs"),
+                                 tr("Remote SCPs saved."));
+    }
 }
 
 void SystemSettingsWidget::onProcInsert()
@@ -337,6 +352,14 @@ void SystemSettingsWidget::onProcRemove()
                                                      QMessageBox::Ok|QMessageBox::Cancel)) {
             procModel->removeRow(index.row());
         }
+    }
+}
+
+void SystemSettingsWidget::onProcSave()
+{
+    if (procModel->saveData()) {
+        QMessageBox::information(this, tr("Save Procedure Params"),
+                                 tr("Procedure params saved."));
     }
 }
 
@@ -381,5 +404,13 @@ void SystemSettingsWidget::onGroupRemove()
                                                      QMessageBox::Ok|QMessageBox::Cancel)) {
             groupModel->removeRow(index.row());
         }
+    }
+}
+
+void SystemSettingsWidget::onUserGroupSave()
+{
+    if (userModel->saveData() && groupModel->saveData()) {
+        QMessageBox::information(this, tr("Save User/Group Settings"),
+                                 tr("User/Group settings saved."));
     }
 }

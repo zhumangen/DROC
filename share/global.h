@@ -20,10 +20,6 @@
 #define STUDY_IMPORT_FOLDER "STUDYIMPORTFOLDER"
 #define STUDY_IMPORT_FILE "STUDYIMPORTFILE"
 #define LOG_EXPORT_FOLDER "LOGEXPORTFOLDER"
-#define IMAGE_CCW_ROTATE "IMAGECCWROTATE"
-#define IMAGE_CW_ROTATE "IMAGECWROTATE"
-#define IMAGE_HORI_FLIP "IMAGEHORIFLIP"
-#define IMAGE_VERT_FLIP "IMAGEVERTFLIP"
 
 #define INCH_MM_RATIO 25.40
 #define DATE_DICOM_FORMAT "yyyyMMdd"
@@ -178,6 +174,10 @@ struct CommunicationInfo {
     quint32 detModel;
     quint32 genModel;
     QString serialPortName;
+    bool ccw90;
+    bool cw90;
+    bool hflip;
+    bool vflip;
 
     CommunicationInfo() {
         detModel = DM_NoDetector;
@@ -185,10 +185,12 @@ struct CommunicationInfo {
     }
 
     friend QDataStream &operator<<(QDataStream &out, const CommunicationInfo &info) {
-        return out << info.detModel << info.genModel << info.serialPortName;
+        return out << info.detModel << info.genModel << info.serialPortName <<
+                      info.ccw90 << info.cw90 << info.hflip << info.vflip;
     }
     friend QDataStream &operator>>(QDataStream &in, CommunicationInfo &info) {
-        return in >> info.detModel >> info.genModel >> info.serialPortName;
+        return in >> info.detModel >> info.genModel >> info.serialPortName >>
+                     info.ccw90 >> info.cw90 >> info.hflip >> info.vflip;
     }
 };
 

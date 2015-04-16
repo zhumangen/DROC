@@ -59,11 +59,13 @@ protected slots:
 
     void onProcInsert();
     void onProcRemove();
+    void onProcSave();
 
     void onUserInsert();
     void onUserRemove();
     void onGroupInsert();
     void onGroupRemove();
+    void onUserGroupSave();
 
 private:
     void init();

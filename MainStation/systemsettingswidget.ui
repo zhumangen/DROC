@@ -59,89 +59,88 @@
        <item row="1" column="1">
         <widget class="QGroupBox" name="groupBox_14">
          <property name="title">
-          <string>Communication Settings</string>
+          <string>Detector</string>
          </property>
-         <layout class="QGridLayout" name="gridLayout_14">
-          <item row="1" column="1">
-           <widget class="QComboBox" name="generatorTypeCombo"/>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>Detector Type</string>
+              </property>
+              <property name="buddy">
+               <cstring>detectorTypeCombo</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="detectorTypeCombo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_46">
-            <property name="text">
-             <string>Generator Type</string>
-            </property>
-            <property name="buddy">
-             <cstring>generatorTypeCombo</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_45">
-            <property name="text">
-             <string>Detector Type</string>
-            </property>
-            <property name="buddy">
-             <cstring>detectorTypeCombo</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="detectorTypeCombo">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_47">
-            <property name="text">
-             <string>Serial Port</string>
-            </property>
-            <property name="buddy">
-             <cstring>serialPortCombo</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QComboBox" name="serialPortCombo"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="groupBox_12">
-         <property name="title">
-          <string>Station Settings</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_12">
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="stationNameEdit"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_39">
-            <property name="text">
-             <string>Station Name</string>
-            </property>
-            <property name="buddy">
-             <cstring>stationNameEdit</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="stationAetEdit"/>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_38">
-            <property name="text">
-             <string>AE Title</string>
-            </property>
-            <property name="buddy">
-             <cstring>stationAetEdit</cstring>
-            </property>
-           </widget>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QCheckBox" name="ccw90Check">
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>90 CCW</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cw90Check">
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>90 CW</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="hflipCheck">
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>H Flip</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="vflipCheck">
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>V Flip</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -211,38 +210,6 @@
              </property>
             </item>
            </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QGroupBox" name="groupBox_18">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>54</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Work Flow</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_10">
-            <item>
-             <widget class="QCheckBox" name="sendAfterAcqCheck">
-              <property name="text">
-               <string>Send after acqusition to</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="storeScpCombo"/>
-            </item>
-           </layout>
           </item>
          </layout>
         </widget>
@@ -477,22 +444,53 @@
        <item row="2" column="1">
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Database Location</string>
+          <string>Other Options</string>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QLineEdit" name="dbFolderEdit">
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Database</string>
+              </property>
+              <property name="buddy">
+               <cstring>dbFolderEdit</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="dbFolderEdit">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="selectButton">
+              <property name="text">
+               <string>Select</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="selectButton">
-            <property name="text">
-             <string>Select</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QCheckBox" name="sendAfterAcqCheck">
+              <property name="text">
+               <string>Send after acqusition to</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="storeScpCombo"/>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -672,6 +670,76 @@
              <cstring>patientIdPrefixEdit</cstring>
             </property>
            </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_12">
+         <property name="title">
+          <string>Station Settings</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_12">
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="stationNameEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_39">
+            <property name="text">
+             <string>Station Name</string>
+            </property>
+            <property name="buddy">
+             <cstring>stationNameEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="stationAetEdit"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_38">
+            <property name="text">
+             <string>AE Title</string>
+            </property>
+            <property name="buddy">
+             <cstring>stationAetEdit</cstring>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_15">
+         <property name="title">
+          <string>Generator</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="1">
+           <widget class="QComboBox" name="generatorTypeCombo"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_48">
+            <property name="text">
+             <string>Generator Type</string>
+            </property>
+            <property name="buddy">
+             <cstring>generatorTypeCombo</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_50">
+            <property name="text">
+             <string>Serial Port</string>
+            </property>
+            <property name="buddy">
+             <cstring>serialPortCombo</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="serialPortCombo"/>
           </item>
          </layout>
         </widget>
@@ -958,12 +1026,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>210</x>
-     <y>352</y>
+     <x>652</x>
+     <y>391</y>
     </hint>
     <hint type="destinationlabel">
-     <x>422</x>
-     <y>353</y>
+     <x>843</x>
+     <y>392</y>
     </hint>
    </hints>
   </connection>

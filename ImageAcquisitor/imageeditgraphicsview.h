@@ -94,8 +94,10 @@ protected:
 private:
     void updateScalors();
     QPixmap getPixmap();
+    void refreshPixmap();
     void resizePixmapItem();
     void repositionAuxItems();
+    void getSavedWindow();
     uint getPixelValue(long x, long y, EP_Representation &r) const;
 
     QGraphicsScene *scene;

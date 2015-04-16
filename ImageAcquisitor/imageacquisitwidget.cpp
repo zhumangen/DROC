@@ -33,7 +33,6 @@
 #include <QDir>
 #include <QFile>
 #include <QTimer>
-#include <QSettings>
 
 ImageAcquisitWidget::ImageAcquisitWidget(QWidget *parent) :
     imgFormat(new DcmFileFormat),
@@ -51,12 +50,6 @@ ImageAcquisitWidget::ImageAcquisitWidget(QWidget *parent) :
 
 ImageAcquisitWidget::~ImageAcquisitWidget()
 {
-    QSettings s;
-    s.setValue(IMAGE_CCW_ROTATE, ui->ccw90Check->isChecked());
-    s.setValue(IMAGE_CW_ROTATE, ui->cw90Check->isChecked());
-    s.setValue(IMAGE_HORI_FLIP, ui->hflipCheck->isChecked());
-    s.setValue(IMAGE_VERT_FLIP, ui->vflipCheck->isChecked());
-
     freeDetector();
     serialPort->close();
     delete imgFormat;
@@ -131,12 +124,6 @@ void ImageAcquisitWidget::init()
     ui->acqBodyPosCombo->addItems(ProcedureItem::BodyPositionStringTable);
     ui->seriesDescCombo->addItems(QSettings().value(SERIES_DESCRIPTION).toStringList());
 
-    QSettings s;
-    ui->ccw90Check->setChecked(s.value(IMAGE_CCW_ROTATE, 0).toBool());
-    ui->cw90Check->setChecked(s.value(IMAGE_CW_ROTATE, 0).toBool());
-    ui->hflipCheck->setChecked(s.value(IMAGE_HORI_FLIP, 0).toBool());
-    ui->vflipCheck->setChecked(s.value(IMAGE_VERT_FLIP, 0).toBool());
-
     createComponents();
     createConnections();
     initDcmFileFormat();
@@ -161,16 +148,18 @@ void ImageAcquisitWidget::onImageDoubleClicked(const QString &imageFile)
     emit imageDoubleClicked(QStringList()<<file);
 }
 
-void ImageAcquisitWidget::onSerialPortOpen()
+void ImageAcquisitWidget::onSerialPortOpen(bool yes)
 {
-    if (serialPort->isOpen()) {
+    if (!yes) {
         serialPort->close();
         ui->serialOpenButton->setText(tr("Open"));
+        ui->serialOpenButton->setChecked(true);
         ui->acqSerialPortLabel->setText(tr("%1: Closed").arg(genInfo.serialPortName));
     } else {
         serialPort->setPortName(genInfo.serialPortName);
         if (!serialPort->open(QIODevice::ReadWrite)) {
             ui->acqSerialPortLabel->setText(tr("%1: Open failed").arg(genInfo.serialPortName));
+            ui->serialOpenButton->setChecked(true);
         } else {
             serialPort->setBaudRate((QSerialPort::BaudRate)genInfo.baudRate);
             serialPort->setDataBits((QSerialPort::DataBits)genInfo.dataBits);
@@ -179,6 +168,7 @@ void ImageAcquisitWidget::onSerialPortOpen()
             serialPort->setFlowControl((QSerialPort::FlowControl)genInfo.flowControl);
             ui->acqSerialPortLabel->setText(tr("%1: Opened").arg(genInfo.serialPortName));
             ui->serialOpenButton->setText(tr("Close"));
+            ui->serialOpenButton->setChecked(false);
         }
     }
 }
@@ -239,82 +229,76 @@ void ImageAcquisitWidget::updateDetGenModels()
     ui->temperatureLcd->setVisible(false);
 
     const CommunicationInfo &info = mainWindow->getCommInfo();
-    if (detInfo.model != info.detModel) {
-        freeDetector();
-        detInfo.model = (DetectorModel)info.detModel;
-        switch (detInfo.model) {
-        case DM_Samsung_1717SGC:
-            detInfo.xSpacing = 0.127;
-            detInfo.ySpacing = 0.127;
-            detInfo.bitsAllocated = 16;
-            detInfo.bitsStored = 14;
-            detInfo.highBit = 13;
-            break;
-        case DM_CareRay_1500L:
-            detInfo.xSpacing = 0.152;
-            detInfo.ySpacing = 0.152;
-            detInfo.bitsAllocated = 16;
-            detInfo.bitsStored = 16;
-            detInfo.highBit = 15;
-            ui->detectorConnectLabel->setVisible(true);
-            ui->temperatureLcd->setVisible(true);
-            break;
-        default:
-            detInfo.model = DM_NoDetector;
-            detInfo.xSpacing = 0.150;
-            detInfo.ySpacing = 0.150;
-            detInfo.bitsAllocated = 16;
-            detInfo.bitsStored = 14;
-            detInfo.highBit = 13;
-            break;
-        }
-        updateDetectorSpecificParams();
-        initDetector();
+    freeDetector();
+    detInfo.model = (DetectorModel)info.detModel;
+    switch (detInfo.model) {
+    case DM_Samsung_1717SGC:
+        detInfo.xSpacing = 0.127;
+        detInfo.ySpacing = 0.127;
+        detInfo.bitsAllocated = 16;
+        detInfo.bitsStored = 14;
+        detInfo.highBit = 13;
+        break;
+    case DM_CareRay_1500L:
+        detInfo.xSpacing = 0.152;
+        detInfo.ySpacing = 0.152;
+        detInfo.bitsAllocated = 16;
+        detInfo.bitsStored = 16;
+        detInfo.highBit = 15;
+        ui->detectorConnectLabel->setVisible(true);
+        ui->temperatureLcd->setVisible(true);
+        break;
+    default:
+        detInfo.model = DM_NoDetector;
+        detInfo.xSpacing = 0.150;
+        detInfo.ySpacing = 0.150;
+        detInfo.bitsAllocated = 16;
+        detInfo.bitsStored = 14;
+        detInfo.highBit = 13;
+        break;
     }
+    updateDetectorSpecificParams();
+    initDetector();
 
-    if (genInfo.model != info.genModel) {
-        genInfo.model = (GeneratorModel)info.genModel;
-        genInfo.serialPortName = info.serialPortName;
-        switch (genInfo.model) {
-        case GM_YiJu:
-            genInfo.baudRate = QSerialPort::Baud9600;
-            genInfo.dataBits = QSerialPort::Data8;
-            genInfo.flowControl = QSerialPort::NoFlowControl;
-            genInfo.parity = QSerialPort::NoParity;
-            genInfo.stopBits = QSerialPort::TwoStop;
-            break;
-        case GM_CPI:
-            genInfo.baudRate = QSerialPort::Baud9600;
-            genInfo.dataBits = QSerialPort::Data8;
-            genInfo.flowControl = QSerialPort::NoFlowControl;
-            genInfo.parity = QSerialPort::NoParity;
-            genInfo.stopBits = QSerialPort::TwoStop;
-            break;
-        case GM_EMD:
-            genInfo.baudRate = QSerialPort::Baud9600;
-            genInfo.dataBits = QSerialPort::Data8;
-            genInfo.flowControl = QSerialPort::NoFlowControl;
-            genInfo.parity = QSerialPort::NoParity;
-            genInfo.stopBits = QSerialPort::TwoStop;
-            break;
-        case GM_Sedecal:
-            genInfo.baudRate = QSerialPort::Baud9600;
-            genInfo.dataBits = QSerialPort::Data8;
-            genInfo.flowControl = QSerialPort::NoFlowControl;
-            genInfo.parity = QSerialPort::NoParity;
-            genInfo.stopBits = QSerialPort::TwoStop;
-            break;
-        default:
-            genInfo.model = GM_NoGenerator;
-            genInfo.baudRate = QSerialPort::Baud9600;
-            genInfo.dataBits = QSerialPort::Data8;
-            genInfo.flowControl = QSerialPort::NoFlowControl;
-            genInfo.parity = QSerialPort::NoParity;
-            genInfo.stopBits = QSerialPort::TwoStop;
-            break;
-        }
-        serialPort->close();
-        onSerialPortOpen();
+    genInfo.model = (GeneratorModel)info.genModel;
+    genInfo.serialPortName = info.serialPortName;
+    switch (genInfo.model) {
+    case GM_YiJu:
+        genInfo.baudRate = QSerialPort::Baud9600;
+        genInfo.dataBits = QSerialPort::Data8;
+        genInfo.flowControl = QSerialPort::NoFlowControl;
+        genInfo.parity = QSerialPort::NoParity;
+        genInfo.stopBits = QSerialPort::TwoStop;
+        break;
+    case GM_CPI:
+        genInfo.baudRate = QSerialPort::Baud9600;
+        genInfo.dataBits = QSerialPort::Data8;
+        genInfo.flowControl = QSerialPort::NoFlowControl;
+        genInfo.parity = QSerialPort::NoParity;
+        genInfo.stopBits = QSerialPort::TwoStop;
+        break;
+    case GM_EMD:
+        genInfo.baudRate = QSerialPort::Baud9600;
+        genInfo.dataBits = QSerialPort::Data8;
+        genInfo.flowControl = QSerialPort::NoFlowControl;
+        genInfo.parity = QSerialPort::NoParity;
+        genInfo.stopBits = QSerialPort::TwoStop;
+        break;
+    case GM_Sedecal:
+        genInfo.baudRate = QSerialPort::Baud9600;
+        genInfo.dataBits = QSerialPort::Data8;
+        genInfo.flowControl = QSerialPort::NoFlowControl;
+        genInfo.parity = QSerialPort::NoParity;
+        genInfo.stopBits = QSerialPort::TwoStop;
+        break;
+    default:
+        genInfo.model = GM_NoGenerator;
+        genInfo.baudRate = QSerialPort::Baud9600;
+        genInfo.dataBits = QSerialPort::Data8;
+        genInfo.flowControl = QSerialPort::NoFlowControl;
+        genInfo.parity = QSerialPort::NoParity;
+        genInfo.stopBits = QSerialPort::TwoStop;
+        break;
     }
 }
 
@@ -323,7 +307,7 @@ void ImageAcquisitWidget::createConnections()
     connect(ui->acquisitButton, SIGNAL(clicked(bool)), SLOT(startCapture(bool)));
     connect(ui->endStudyButton, SIGNAL(clicked()), this, SLOT(onEndAcq()));
 
-    connect(ui->serialOpenButton, SIGNAL(clicked()), this, SLOT(onSerialPortOpen()));
+    connect(ui->serialOpenButton, SIGNAL(clicked(bool)), this, SLOT(onSerialPortOpen(bool)));
     connect(ui->acqMAmsCheck, SIGNAL(toggled(bool)), this, SLOT(updateEditorStatus(bool)));
     connect(ui->acqMAsCheck, SIGNAL(toggled(bool)), this, SLOT(updateEditorStatus(bool)));
     connect(ui->acqKvPlusButton, SIGNAL(clicked()), this, SLOT(onKvPlusButton()));
@@ -777,18 +761,33 @@ void ImageAcquisitWidget::onStoreScpChanged(const QList<DicomScp *> &scps)
 void ImageAcquisitWidget::hideEvent(QHideEvent */*event*/)
 {
     startCapture(false);
+    onSerialPortOpen(false);
 }
 
 void ImageAcquisitWidget::showEvent(QShowEvent */*event*/)
 {
-    if (hasStudy())
+    if (hasStudy()) {
         startCapture(true);
+        onSerialPortOpen(true);
+        updateExposureParams();
+    }
 }
 
 void ImageAcquisitWidget::dumyImageCapture()
 {
     DcmFileFormat dcmff;
     dcmff.loadFile("test.dcm");
+    DcmDataset *dset = dcmff.getDataset();
+    Uint16 width, height;
+    const Uint16 *data;
+    dset->findAndGetUint16(DCM_Rows, height);
+    dset->findAndGetUint16(DCM_Columns, width);
+    dset->findAndGetUint16Array(DCM_PixelData, data);
+    frameWidth = width;
+    frameHeight = height;
+    frameBuffer = (short*)const_cast<Uint16*>(data);
+    insertImageToDataset();
+    /*
     ImageEditDialog dialog(this);
     int angle = 0, hori, vert;
     if (ui->ccw90Check->isChecked()) angle -= 90;
@@ -800,6 +799,7 @@ void ImageAcquisitWidget::dumyImageCapture()
     if (QDialog::Accepted == dialog.exec()) {
         dcmff.saveFile("test.dcm", dcmff.getDataset()->getOriginalXfer());
     }
+    */
 }
 
 #include "atlstr.h"
@@ -1065,11 +1065,12 @@ void ImageAcquisitWidget::insertImageToDataset()
 
 
         ImageEditDialog dialog(this);
+        const CommunicationInfo &commInfo = mainWindow->getCommInfo();
         int angle = 0, hori, vert;
-        if (ui->ccw90Check->isChecked()) angle -= 90;
-        if (ui->cw90Check->isChecked()) angle += 90;
-        hori = ui->hflipCheck->isChecked()?1:0;
-        vert = ui->vflipCheck->isChecked()?1:0;
+        if (commInfo.ccw90) angle -= 90;
+        if (commInfo.cw90) angle += 90;
+        hori = commInfo.hflip?1:0;
+        vert = commInfo.vflip?1:0;
         dialog.setImageTransform(angle, hori, vert);
         dialog.setFileFormat(imgFormat);
         if (QDialog::Accepted == dialog.exec()) {

@@ -195,15 +195,6 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
             ySpacing = spacings.last().toDouble();
         }
 
-        dset->findAndGetString(DCM_WindowCenter, value);
-        winCenter = QString::fromLatin1(value).toDouble();
-        dset->findAndGetString(DCM_WindowWidth, value);
-        winWidth = QString::fromLatin1(value).toDouble();
-
-        dset->findAndGetString(DCM_ProtocolName, value);
-        procId = QString::fromLocal8Bit(value);
-
-        if (winWidth < 1) mainWindow->getProcModel()->getWindow(procId, winCenter, winWidth);
         QRectF rect;
         if (mainWindow->getProcModel()->getClipRect(procId, rect) && rect.isValid())
             clipRectItem->setRect(rect);
@@ -214,14 +205,13 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
 
             dcmImage->rotateImage(rotateAngle);
             dcmImage->flipImage(hflip, vflip);
+            dcmImage->setHistogramWindow();
+            dcmImage->getWindow(winCenter, winWidth);
 
             imageList.prepend(dcmImage);
             imageIndex = 0;
-            pixmapItem->setPixmap(getPixmap());
 
-            windowItem->setText(tr("WL:%1 WW:%2").arg(int(winCenter)).arg(int(winWidth)));
-            resizePixmapItem();
-            repositionAuxItems();
+            refreshPixmap();
             updateScalors();
 
             if (process) {
@@ -241,7 +231,15 @@ bool ImageEditGraphicsView::setFileFormat(DcmFileFormat *dff, bool process)
                     dset->findAndGetUint16(DCM_Columns, thread->width);
                     dset->findAndGetUint16(DCM_Rows, thread->height);
                     thread->start();
+                } else {
+                    rotateAngle = 0;
+                    hflip = vflip = 0;
+                    getSavedWindow();
                 }
+            } else {
+                rotateAngle = 0;
+                hflip = vflip = 0;
+                getSavedWindow();
             }
 
             return true;
@@ -263,9 +261,8 @@ void ImageEditGraphicsView::onProcessingFinished(bool ok)
             image->rotateImage(rotateAngle);
             image->flipImage(hflip, vflip);
             imageList.insert(imageIndex, image);
-            pixmapItem->setPixmap(getPixmap());
-            resizePixmapItem();
-            repositionAuxItems();
+            getSavedWindow();
+            refreshPixmap();
         } else {
             delete image;
         }
@@ -328,6 +325,32 @@ void ImageEditGraphicsView::repositionAuxItems()
     QSizeF yRect = yScalorItem->boundingRect().size()*factor;
     yScalorItem->setPos(sceneTL.x()+yRect.width(),
                         sceneTL.y()+((sceneBR.y()-sceneTL.y())-yRect.height())/2);
+}
+
+void ImageEditGraphicsView::getSavedWindow()
+{
+    if (!ff) return;
+
+    DcmDataset *dset = ff->getDataset();
+
+    const char *value;
+    dset->findAndGetString(DCM_ProtocolName, value);
+    procId = QString::fromLocal8Bit(value);
+
+    if (!mainWindow->getProcModel()->getWindow(procId, winCenter, winWidth)) {
+        dset->findAndGetString(DCM_WindowCenter, value);
+        winCenter = QString::fromLatin1(value).toDouble();
+        dset->findAndGetString(DCM_WindowWidth, value);
+        winWidth = QString::fromLatin1(value).toDouble();
+    }
+}
+
+void ImageEditGraphicsView::refreshPixmap()
+{
+    pixmapItem->setPixmap(getPixmap());
+    resizePixmapItem();
+    repositionAuxItems();
+    windowItem->setText(tr("WL:%1 WW:%2").arg(int(winCenter)).arg(int(winWidth)));
 }
 
 void ImageEditGraphicsView::resizePixmapItem()

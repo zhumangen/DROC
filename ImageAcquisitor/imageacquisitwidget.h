@@ -51,7 +51,7 @@ public slots:
     void onStoreScpChanged(const QList<DicomScp*> &scps);
 
 protected slots:
-    void onSerialPortOpen();
+    void onSerialPortOpen(bool yes);
     void onSerialPortReadReady();
     void onEndAcq();
 
