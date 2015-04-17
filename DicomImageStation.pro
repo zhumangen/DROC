@@ -19,10 +19,11 @@ QMAKE_CFLAGS_DEBUG += /MDd
 QMAKE_CXXFLAGS_RELEASE += /MD
 QMAKE_CXXFLAGS_DEBUG += /MDd
 
-INCLUDEPATH += "C:\Program Files\Matrox Imaging\Mil\Include"
-INCLUDEPATH += "C:\Program Files\DCMTK_MDd\include"
-LIBS += "C:\Program Files\Matrox Imaging\Mil\LIB\*"
-LIBS += "C:\Program Files\DCMTK_MDd\lib\*"
+INCLUDEPATH += "C:/Program Files/Matrox Imaging/Mil/Include"
+INCLUDEPATH += "C:/Program Files/Matrox Imaging/ActiveMil/Controls"
+INCLUDEPATH += "C:/Program Files/DCMTK_MDd/include"
+LIBS += "C:/Program Files/Matrox Imaging/Mil/LIB/*"
+LIBS += "C:/Program Files/DCMTK_MDd/lib/*"
 LIBS += advapi32.lib wsock32.lib netapi32.lib ws2_32.lib
 LIBS += crapi.lib IeLauncher.lib
 

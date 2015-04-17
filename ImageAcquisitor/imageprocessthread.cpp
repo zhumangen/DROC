@@ -15,6 +15,6 @@ ImageProcessThread::ImageProcessThread(QObject *parent) :
 void ImageProcessThread::run()
 {
     config.replace(QChar('/'), QChar('\\'));
-    int ret = LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, config.toLocal8Bit().data(), width, height, depth);
+    int ret = 1;//LaunchImageEnhancer_RAWnMem(srcBuf, destBuf, config.toLocal8Bit().data(), width, height, depth);
     emit resultReady(ret);
 }
