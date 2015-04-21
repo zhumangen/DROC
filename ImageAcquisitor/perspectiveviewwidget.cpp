@@ -22,6 +22,9 @@ PerspectiveViewWidget::PerspectiveViewWidget(QWidget *parent) :
 
 PerspectiveViewWidget::~PerspectiveViewWidget()
 {
+    if (ui->startViewButton->isChecked())
+        pDig->MultipleBuffering->Halt(false);
+
     delete ui;
     delete axDig;
     delete axImgPro;
@@ -62,8 +65,15 @@ void PerspectiveViewWidget::init()
     pDig->Allocate();
     pDis->Allocate();
 
-    pDis->LUT->GenerateRamp(0, 0, 255, 255);
+    int depth = pDig->DataDepth;
+    int imageMax = (1<<depth)-1;
+    pDis->LUT->GenerateRamp(0, 0, imageMax, 255);
     pDis->LUTEnabled = true;
+    ui->lowMaxLabel->setText(QString::number(imageMax));
+    ui->lowSlider->setValue(0);
+    ui->highMaxLabel->setText(QString::number(imageMax));
+    ui->highSlider->setValue(imageMax);
+    ui->maxSlider->setValue(255);
 
     BOOL ContinueAllocating = TRUE;
     while(ContinueAllocating) {
@@ -101,9 +111,9 @@ void PerspectiveViewWidget::setupConnections()
     connect(ui->startViewButton, SIGNAL(clicked(bool)), this, SLOT(onStartView(bool)));
     connect(ui->endViewButton, SIGNAL(clicked()), this, SLOT(onEndView()));
     connect(ui->grabImageButton, SIGNAL(clicked()), this, SLOT(onGrabImage()));
-    connect(ui->zoomSpinBox, SIGNAL(valueChanged(double)), this, SLOT(onZoom(double)));
-    connect(ui->centerSpinBox, SIGNAL(valueChanged(int)), this, SLOT(generateLutRamps()));
-    connect(ui->widthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(generateLutRamps()));
+    connect(ui->maxSlider, SIGNAL(valueChanged(int)), this, SLOT(generateLutRamps()));
+    connect(ui->lowSlider, SIGNAL(valueChanged(int)), this, SLOT(generateLutRamps()));
+    connect(ui->highSlider, SIGNAL(valueChanged(int)), this, SLOT(generateLutRamps()));
 
     connect(axDig, SIGNAL(ProcessModifiedImage(int)), this, SLOT(onProcessModifiedImage(int)));
 }
@@ -139,13 +149,23 @@ void PerspectiveViewWidget::generateLutRamps()
 {
     pDis->UpdateEnabled = false;
 
-    int min = (ui->centerSpinBox->value() - (ui->widthSpinBox->value()/2));
-    min = min<0?0:min;
-    int max = (ui->centerSpinBox->value() + (ui->widthSpinBox->value()/2));
-    max = max>255?255:max;
-    pDis->LUT->GenerateRamp(0, 0, min, 0);
-    pDis->LUT->GenerateRamp(min, 0, max, 255);
-    pDis->LUT->GenerateRamp(max, 255, 255, 255);
+    int imageMax = (1<<(pDig->DataDepth))-1;
+    int low = ui->lowSlider->value();
+    int high = ui->highSlider->value();
+    if (low > high) {
+        if (sender() == ui->lowSlider) {
+            ui->highSlider->setValue(low);
+            high = low;
+        } else {
+            ui->lowSlider->setValue(high);
+            low = high;
+        }
+    }
+    int max = ui->maxSlider->value();
+
+    pDis->LUT->GenerateRamp(0, 0, low, 0);
+    pDis->LUT->GenerateRamp(low, 0, high, max);
+    pDis->LUT->GenerateRamp(high, max, imageMax, 255);
 
     pDis->UpdateEnabled = true;
 }
