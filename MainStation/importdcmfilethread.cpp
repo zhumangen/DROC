@@ -43,7 +43,7 @@ void ImportDcmFileThread::run()
                         if (StudyDbManager::updateImageFile(image->imageUid, image->imageFile)) images++;
                         else QFile(info.filePath()).remove();
                     }
-                } else images++;
+                }
             }
             image->imageFile = srcFile;
 

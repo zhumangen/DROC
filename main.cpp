@@ -4,6 +4,7 @@
 #include "share/global.h"
 #include <QApplication>
 #include <QTranslator>
+#include <QDesktopWidget>
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
     QTranslator t;
     t.load("dicomimagestation_cn.qm");
     a.installTranslator(&t);
+
+    QApplication::desktop()->setEnabled(false);
 
     // Device Register
     if (!RegisterDialog::verifyDevice()) {
@@ -32,6 +35,7 @@ int main(int argc, char *argv[])
 
     MainWindow w(user, group);
     w.showMaximized();
+    w.setWindowState(Qt::WindowFullScreen);
 
     return a.exec();
 }

@@ -396,7 +396,7 @@ void ImageAcquisitWidget::updateExposureParams()
             ui->acqTubeVoltageSpin->setValue(kvp);
             ui->acqTubeCurrentSpin->setValue(ma);
             ui->acqExposureTimeSpin->setValue(ms);
-            ui->acqPowerSpin->setValue(ma*ms*1000);
+            ui->acqPowerSpin->setValue(ma*ms/1000);
         }
     }
     ui->procIdEdit->setText(procId);
@@ -539,42 +539,66 @@ void ImageAcquisitWidget::onAcqSave()
 
 void ImageAcquisitWidget::onKvPlusButton()
 {
-    serialPort->write("KV+\r");
+    if (serialPort->isOpen())
+        serialPort->write("KV+\r");
+    else
+        ui->acqTubeVoltageSpin->setValue(ui->acqTubeVoltageSpin->value()+1);
 }
 
 void ImageAcquisitWidget::onKvMinusButton()
 {
-    serialPort->write("KV-\r");
+    if (serialPort->isOpen())
+        serialPort->write("KV-\r");
+    else
+        ui->acqTubeVoltageSpin->setValue(ui->acqTubeVoltageSpin->value()-1);
 }
 
 void ImageAcquisitWidget::onmSPlusButton()
 {
-    serialPort->write("MS+\r");
+    if (serialPort->isOpen())
+        serialPort->write("MS+\r");
+    else
+        ui->acqExposureTimeSpin->setValue(ui->acqExposureTimeSpin->value()+1);
 }
 
 void ImageAcquisitWidget::onmSMinusButton()
 {
-    serialPort->write("MS-\r");
+    if (serialPort->isOpen())
+        serialPort->write("MS-\r");
+    else
+        ui->acqExposureTimeSpin->setValue(ui->acqExposureTimeSpin->value()-1);
 }
 
 void ImageAcquisitWidget::onMXPlusButton()
 {
-    serialPort->write("MX++\r");
+    if (serialPort->isOpen())
+        serialPort->write("MX++\r");
+    else
+        ui->acqPowerSpin->setValue(ui->acqPowerSpin->value()+1);
 }
 
 void ImageAcquisitWidget::onMXMinusButton()
 {
-    serialPort->write("MX--\r");
+    if (serialPort->isOpen())
+        serialPort->write("MX--\r");
+    else
+        ui->acqPowerSpin->setValue(ui->acqPowerSpin->value()-1);
 }
 
 void ImageAcquisitWidget::onmAPlusButton()
 {
-    serialPort->write("MA+\r");
+    if (serialPort->isOpen())
+        serialPort->write("MA+\r");
+    else
+        ui->acqTubeCurrentSpin->setValue(ui->acqTubeCurrentSpin->value()+1);
 }
 
 void ImageAcquisitWidget::onmAMinusButton()
 {
-    serialPort->write("MA-\r");
+    if (serialPort->isOpen())
+        serialPort->write("MA-\r");
+    else
+        ui->acqTubeCurrentSpin->setValue(ui->acqTubeCurrentSpin->value()-1);
 }
 
 void ImageAcquisitWidget::onSerialPortReadReady()

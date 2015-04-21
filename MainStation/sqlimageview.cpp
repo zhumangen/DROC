@@ -24,7 +24,7 @@ void SqlImageView::setupContextMenu()
 
     viewImageAction = contextMenu->addAction(tr("View Image"), this, SLOT(onViewImage()));
     sendImageAction = contextMenu->addAction(tr("Send Image"), this, SLOT(onSendImage()));
-    exportImageAction = contextMenu->addAction(tr("Export Image"), this, SLOT(onSendImage()));
+    exportImageAction = contextMenu->addAction(tr("Export Image"), this, SLOT(onExportImage()));
     removeImageAction = contextMenu->addAction(tr("Remove Image"), this, SLOT(onRemoveImage()));
 
     GroupPermissions perms = mainWindow->getCurrentGroup().permissions;

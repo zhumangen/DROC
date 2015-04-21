@@ -125,7 +125,8 @@ HEADERS += \
     ImageAcquisitor/imageprocessthread.h \
     MainStation/exitwidget.h \
     ImageAcquisitor/carerayacquisitthread.h \
-    ImageAcquisitor/perspectiveviewwidget.h
+    ImageAcquisitor/perspectiveviewwidget.h \
+    ImageAcquisitor/ActiveMILUtils.h
 
 SOURCES += \
     DicomService/echoscu.cpp \

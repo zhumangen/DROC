@@ -24,8 +24,7 @@
 #include <QSplashScreen>
 #include <QVBoxLayout>
 #include <QMessageBox>
-#include <QSqlError>
-#include <QSqlQuery>
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     prevTab(0),
