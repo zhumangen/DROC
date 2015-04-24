@@ -7,6 +7,7 @@
 #include <QAxWidget>
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QResizeEvent>
 
 #import "mil9/MILImageProcessing.ocx" no_namespace
 
@@ -60,9 +61,13 @@ void PerspectiveViewWidget::init()
     pDis->Image = pImgDest;
 
     pSys->Allocate();
-    pImgDest->Allocate();
     pImgPro->Allocate();
     pDig->Allocate();
+
+    pImgDest->NumberOfBands = 1;
+    pImgDest->SizeX = (long)(pDig->SizeX);
+    pImgDest->SizeY = (long)(pDig->SizeY);
+    pImgDest->Allocate();
     pDis->Allocate();
 
     int depth = pDig->DataDepth;
@@ -83,8 +88,8 @@ void PerspectiveViewWidget::init()
             NewImage->CanDisplay = FALSE;
             NewImage->CanProcess = TRUE;
             NewImage->NumberOfBands = 1;
-            NewImage->SizeX = (long)(pDig->SizeX * pDig->ScaleX);
-            NewImage->SizeY = (long)(pDig->SizeY * pDig->ScaleY);
+            NewImage->SizeX = (long)(pDig->SizeX/* * pDig->ScaleX*/);
+            NewImage->SizeY = (long)(pDig->SizeY/* * pDig->ScaleY*/);
 
             NewImage->Allocate();
 
@@ -135,6 +140,12 @@ void PerspectiveViewWidget::onStartView(bool start)
         // Start the processing.  The processing event is fired for every frame grabbed
         //
         pDig->MultipleBuffering->Process(digStart, ActiveMILObjectsArray);
+
+        QSize size = axDis->size();
+        int width = pDig->SizeX;
+        int height = pDig->SizeY;
+        pDis->PanX = (width-size.width())/2;
+        pDis->PanY = (height-size.height())/2;
 
         ui->startViewButton->setText(tr("Halt View"));
         ui->startViewButton->setChecked(true);
